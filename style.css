@@ -64,6 +64,10 @@ nav label.button:hover{
     color: #CAA369;
 }
 
+.nav-img img{
+    display: none;
+}
+
 
 
 @media (max-width:768px){
@@ -71,7 +75,7 @@ nav label.button:hover{
         /* display: none; */
         position: fixed;
         top: 0;
-        right: 0%;
+        right: 0;
         height: 100vh;
         max-width: 220px;
         width: 100%;
@@ -83,7 +87,7 @@ nav label.button:hover{
 
     .menu ul a{
         margin-top: 20px;
-        text-align: right;
+        text-align: left;
         font-size: 20px;
         display:block;
         width: 100%;
@@ -103,6 +107,14 @@ nav label.button:hover{
         position: fixed;
         top: 10px;
         right: 10px;
+    }
+
+      .nav-img img{
+        margin-top:180px;
+        display: block;
+        position: fixed;
+        
+        left: 12px;
     }
 
     
