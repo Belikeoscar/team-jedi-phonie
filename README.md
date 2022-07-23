@@ -1,5 +1,7 @@
 # AltSchool Semester 1 Holiday Challenge
 
+![team jedi](https://github.com/scarnation/team-jedi-phonie/blob/main/Jedi/jedi.png)
+
 ### What
 Solidify what you’ve learnt by building cool simple things you can showcase
 
