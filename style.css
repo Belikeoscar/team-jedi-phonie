@@ -227,16 +227,16 @@ form{
 }
 
 .input-fields label{
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     margin-bottom: 10px;
    
 }
 
 .input-fields input, .input-fields select{
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
     outline: none;
     font-weight: 400;
     color:black ;
@@ -287,9 +287,16 @@ button{
     
 }
 
+
+
 .tel-logo span img{
     border-radius: 5px;
 }
+
+.mtn, .airtel, .glo, .nine-mobile{
+    display: none;
+}
+
 
 /*Tablet Styling*/
 @media (max-width:768px){
