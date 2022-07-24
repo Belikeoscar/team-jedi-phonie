@@ -13,9 +13,10 @@
 </head>
 
 <body>
-  <header>
+  <div class="main__container">
+    <header class="header">
 
-    <nav>
+      <nav>
 
       <div class="menu">
 
@@ -46,89 +47,120 @@
 
   </header>
 
+ <main>
+    <div class="content-container">
+       <aside>
+            <img class="jedi" src="./Group 10 2.svg" alt="" />
+        </aside>
+            
+        
 
-  <main>
-    <aside class="main_image">
-      <img src="" alt="" />
-    </aside>
-    <section class="container">
-      <div class="sub_container">
-        <h2 class="first_challenge">Phonies: identify the telecoms carrier from a phone number</h2>
-        <form action="">
-          <div class="name">
-            <label for="first_name">First Name</label>
-            <input type="text" id="name" />
-          </div>
-          <div class="name">
-            <label for="last_name">Last Name</label>
-            <input type="text" id="name" />
-          </div>
-          <div class="mail">
-            <label for="email">Your Email</label>
-            <input type="email" />
-          </div>
-          <div class="nation">
-            <label for="nationality">Nationality</label>
-            <select name="" id="">
-              <option value="">Nigeria</option>
-              <option value="">Kenya</option>
-            </select>
-          </div>
-          <div class="address">
-            <label for="address">Your Address</label>
-            <input type="text">
-          </div>
-          <div class="town">
-            <label for="town">Town</label>
-            <input type="text">
-          </div>
+    
+        <div class="form">
+            
+            <span class="form-title">Phonie </span>
 
-          <div class="provider">
-            <div>
-              <h3>Network Provider</h3>
+            <form action="#">
+
+
+                <div class="fields">
+
+                
+                <div class="input-fields">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="name" placeholder="Enter firstname" />
+                </div>
+
+                <div class="input-fields">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="name" placeholder="Enter Lastname" />
+                </div>
+
+                <div class="input-fields">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="e.g name@name.com" />
+                </div>
+
+                <div class="input-fields">
+                    <label for="nationality">Nationality</label>
+                    <select name="" id="">
+                        <option value="select country"  selected disabled></option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Kenya">Kenya</option>
+                    </select>
+                </div>
+
+                <div class="input-fields">
+                    <label for="address">Address</label>
+                    <input type="text" placeholder="Enter location address">
+                </div>
+
+                <div class="input-fields">
+                    <label for="town">Town</label>
+                    <input type="text" placeholder="Enter city name">
+                </div>
+
+                <div class="input-fields network">
+                    <div>
+                        <label for="network-provider">Network Provider</label>
+                        
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" id="radio" name="net" value="Glo">
+                        <span>Glo</span>
+                    </div>
+
+                    <div class="radio" >
+                        <input type="radio" id="radio" name="net" value="MTN">
+                        <span>MTN</span>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="radio" name="net" value="Airtel">
+                        <span>Airtel</span>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="radio" name="net" value="9-mobile">
+                        <span>9 Mobile</span>
+                        
+                    </div>
+                   
+                </div>
+
+                
+            
+                <div class="input-fields phone">
+                    <label for="tel">Phone</label>
+                    
+                    <div class="tel-logo">
+                    <span><img src="./Frame 1.svg" style="border-radius: 5px;" height="50px" alt=""></span>
+                    <input type="tel" placeholder="e.g +234 913xxxxxxx">
+                    </div>
+
+                </div>
+
+                
+                <div class="submit-btn">
+                    <button>Submit</button>
+                </div>
+
             </div>
-            <div>
-              <label for="glo">Glo</label>
-              <input type="radio" id="radio">
-            </div>
-            <div>
-              <label for="mtn">MTN</label>
-              <input type="radio" id="radio">
-            </div>
-            <div>
-              <label for="airtel">Airtel</label>
-              <input type="radio" id="radio">
-            </div>
-            <div>
-              <label for="9mobile">9Mobile</label>
-              <input type="radio" id="radio">
-            </div>
-          </div>
-          <div class="phone_icon">
-            <img src="" alt="" />
-          </div>
-          <div class="number">
-            <label for="phone_number">Phone Number</label>
-            <input type="tel">
-          </div>
-          <div class="submit">
-            <input type="submit">
-
-          </div>
 
 
+                
 
-        </form>
-  </main>
+               
 
-  </div>
+            </form>
+        </div>
+</main>
 
-  </section>
 
 
   <!-- // ============= EEND DO NOT EDIT ============== // -->
   <script src="index.mjs" type="module"></script>
   <!-- // ============= EEND DO NOT EDIT ============== // -->
+    </div>
 </body>
 
 </html>

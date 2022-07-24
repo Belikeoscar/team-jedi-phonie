@@ -9,6 +9,34 @@ body{
     background-color: #fff;
 }
 
+.main__container {
+  height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 60px auto 100px;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "a a a a m m m m m m m m"
+        "a a a a s s s s s s s s";
+}
+
+.header {
+  grid-area: h;
+}
+
+.image-container {
+  grid-area: a;
+}
+
+.container {
+  grid-area: m;
+}
+
+.provider {
+  grid-area: s;
+}
+
 nav{
     background-color: #fff;
     width: 100%;
@@ -83,6 +111,7 @@ nav label.button:hover{
         background-color:#F6F2E7;
         box-shadow:0 3px 10px #ceced1;
         transform:translateX(100%);
+      z-index:999;
     }
 
     .menu ul a{
@@ -119,3 +148,216 @@ nav label.button:hover{
 
     
 }
+
+
+
+/*Home page styles - Desktop view*/
+
+main{
+    
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    
+
+}
+
+.content-container{
+    display: flex;
+    flex-direction: row;
+    margin:0 auto;
+   align-items: center;
+   justify-content: center;
+    padding-top: 20px;
+    max-width: 85%;
+    
+   
+}
+
+aside img {
+    max-height: 100vh;
+    margin-right: 50px;
+    height: 700px;
+  margin-top: 30px;
+  margin-left:100px
+ 
+}
+
+
+
+.form-title{
+    font-size: 35px;
+    font-weight: 500;
+    
+}
+
+form{
+  width: 800px;
+
+}
+
+.fields{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+   
+}
+
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 2 - 30px);
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.network{
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+    width: 80%;
+}
+
+.phone{
+    width:35%;
+}
+
+.input-fields label{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+   
+}
+
+.input-fields input, .input-fields select{
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    outline: none;
+    font-weight: 400;
+    color:black ;
+    border: 1px solid #aaa;
+    padding: 0 20px;
+}
+
+.input-fields input::placeholder{
+    text-align: center;
+    font-weight: 500;
+}
+
+
+
+.network .radio{
+    display: flex;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.radio span{
+    margin-left: 10px;
+}
+
+.submit-btn{
+    position: absolute;
+    bottom: -40px;
+    right: 50px;
+}
+
+button{
+    width: 200px;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #CAA369;
+    border: none;
+    border-radius: 5px;
+}
+
+.tel-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    
+}
+
+.tel-logo span img{
+    border-radius: 5px;
+}
+
+/*Tablet Styling*/
+@media (max-width:768px){
+    aside img{ display: none;}
+
+ 
+
+    .submit-btn {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+    
+    
+    }
+
+    .network {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+   
+}
+
+/*Mobile styling*/
+
+@media (max-width:550px){
+    .input-fields{
+        width: 100%;
+    }
+
+    .network {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .network .radio {
+        display: flex;
+        align-items: center;
+    
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .radio span {
+        margin-left: 5px;
+    }
+    .phone {
+        width: 100%;
+    }
+
+   
+    
+    .submit-btn {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        
+        
+    }
+}
+
+
+
