@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+/*victory for president*/
 body{
     background-color: #fff;
 }
@@ -169,7 +169,8 @@ main{
    align-items: center;
    justify-content: center;
     padding-top: 20px;
-    max-width: 85%;
+    max-width: 100%;
+    margin-left: 40px;
     
    
 }
@@ -276,7 +277,7 @@ button{
     font-size: 20px;
     font-weight: 500;
     color: #fff;
-    background-color: #CAA369;
+   background: linear-gradient(90deg, rgba(202,163,105,1) 0%, rgba(186,148,96,1) 47%, rgba(170,133,86,1) 100%);
     border: none;
     border-radius: 5px;
 }
@@ -330,7 +331,7 @@ button{
 
 /*Mobile styling*/
 
-@media (max-width:550px){
+@media (max-width:480px){
     .input-fields{
         width: 100%;
     }
