@@ -295,7 +295,10 @@ button{
 @media (max-width:768px){
     aside img{ display: none;}
 
- 
+
+  main{
+    padding:30px
+  }
 
     .submit-btn {
         position: absolute;
