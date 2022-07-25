@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+  }
+
+header,
+aside,
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 60px auto;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m m m c c c c c c c c c"
+}
+
+.header {
+  grid-area: h;
+}
+
+.sidebar {
+  grid-area: m;
+/*   position: absolute; */
+/*   width: 200px;
+  height: 600px;
+  left: 20px;
+  top: 109px;
+  background: #F7F2E7; */
+}
+
+.contributors {
+  grid-area: c;
+}
+
+.jedi {
+  width: 360px;
+  height: 360px;
+  left: 34px;
+  top: 589px;
+}
+
+.altschool__image {
+  width: 226px;
+height: 226px;
+left: 85px;
+top: 160px;
+}
