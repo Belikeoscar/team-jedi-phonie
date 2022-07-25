@@ -142,26 +142,33 @@ main{
 
 }
 
-.content-container{
+main {
     display: flex;
-    flex-direction: row;
+/*     flex-direction: row; */
     margin:0 auto;
    align-items: center;
    justify-content: center;
     padding-top: 20px;
-    max-width: 100%;
+    width: 100%;
 /*     margin-left: 40px; */
     
    
 }
 
+aside {
+  width: 30%;
+}
+.form {
+  width: 70%;
+}
+
 aside img {
-    max-height: 100vh;
-    margin-right: 50px;
-    height: 700px;
-  margin-top: 30px;
-  margin-left:20px;
-  width: 500px;
+/*     max-height: 100vh; */
+/*     margin-right: 50px; */
+/*     height: 700px; */
+/*   margin-top: 30px;
+  margin-left:20px; */
+  width: 100%;
  
 }
 
@@ -202,6 +209,13 @@ form{
    align-items: center;
    justify-content: space-between;
     width: 80%;
+}
+
+.network .network-provider{
+    display: flex;
+    flex-direction: row;
+   width: 100%;
+    justify-content: space-between;
 }
 
 .phone{
@@ -282,6 +296,16 @@ button{
     display: none;
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .input-fields.network {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 80%;
+    
+    }
+
 
 /*Tablet Styling*/
 
@@ -305,8 +329,8 @@ button{
 
     .network {
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        align-items:flex-start;
         justify-content: space-between;
         width: 100%;
         flex-wrap: wrap;
@@ -322,7 +346,7 @@ button{
         width: 100%;
     }
 
-    .network {
+     .network {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -335,7 +359,7 @@ button{
         display: flex;
         align-items: center;
     
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 500;
     }
     
