@@ -133,23 +133,25 @@ nav label.button:hover{
 
 /*Home page styles - Desktop view*/
 
-main{
+/* main{
     
     width: 100%;
     max-width: 100%;
     margin: auto;
     
 
-}
+} */
 
 main {
     display: flex;
 /*     flex-direction: row; */
     margin:0 auto;
-   align-items: center;
-   justify-content: center;
-    padding-top: 20px;
+/*    align-items: center; */
+   justify-content: space-between;
+  align-items: flex-start;
+/*     padding-top: 20px; */
     width: 100%;
+  padding: 1rem 2rem;
 /*     margin-left: 40px; */
     
    
@@ -157,6 +159,7 @@ main {
 
 aside {
   width: 30%;
+
 }
 .form {
   width: 70%;
@@ -169,6 +172,7 @@ aside img {
 /*   margin-top: 30px;
   margin-left:20px; */
   width: 100%;
+  height: 500px
  
 }
 
@@ -188,33 +192,42 @@ form{
 .fields{
     margin-top: 40px;
     width: 100%;
-    display: flex;
+/*     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    position: relative; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
    
 }
 
 .input-fields{
+  
     display: flex;
     flex-direction: column;
-    width: calc(100% / 2 - 30px);
+    
+/*     width: calc(100% / 2 - 30px);
     margin-bottom: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 
 .network{
-    display: flex;
+  grid-column: 1/-1;
+
+/*     display: flex;
     flex-direction: row;
    align-items: center;
    justify-content: space-between;
-    width: 80%;
+    width: 80%; */
 }
 
 .network .network-provider{
+  
+
     display: flex;
     flex-direction: row;
-   width: 100%;
+   width: 80%;
     justify-content: space-between;
 }
 
@@ -255,7 +268,7 @@ form{
     align-items: center;
 
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .radio span{
@@ -263,9 +276,11 @@ form{
 }
 
 .submit-btn{
-    position: absolute;
+  align-self: flex-end;
+  margin-top: 1rem;
+/*     position: absolute;
     bottom: -40px;
-    right: 50px;
+    right: 50px; */
 }
 
 button{
@@ -296,7 +311,7 @@ button{
     display: none;
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 768px){
+/* @media only screen and (max-width: 1024px) and (min-width: 768px){
     .input-fields.network {
         display: flex;
         flex-direction: column;
@@ -306,11 +321,13 @@ button{
     
     }
 
-
+} */
 /*Tablet Styling*/
-
 @media (max-width:768px){
-    aside img{ display: none;}
+  aside {
+    display: none;
+  }
+
 
   header {
     padding: 0 1rem;
@@ -320,40 +337,49 @@ button{
   }
 
     .submit-btn {
-        position: absolute;
+/*         position: absolute;
         bottom: -40px;
-        left: 0;
-    
+        left: 0; */
+     align-self: center;
     
     }
 
-    .network {
+/*     .network {
         display: flex;
         flex-direction: column;
         align-items:flex-start;
         justify-content: space-between;
         width: 100%;
         flex-wrap: wrap;
-    }
+    } */
+  .form {
+  width: 100%;
+}
 
    
 }
 
+
 /*Mobile styling*/
+@media (max-width: 568px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width:480px){
     .input-fields{
         width: 100%;
     }
 
-     .network {
+/*      .network {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+
         flex-wrap: wrap;
-    }
+    } */
 
     .network .radio {
         display: flex;
@@ -372,13 +398,13 @@ button{
 
    
     
-    .submit-btn {
+/*     .submit-btn {
         position: absolute;
         bottom: -40px;
         left: 0;
         
         
-    }
+    } */
 }
 
 
