@@ -9,7 +9,7 @@ html, body {
     height: 100%;
     padding: 10px;
   }
-
+/* 
 header,
 aside,
 table {
@@ -28,35 +28,77 @@ table {
         "h h h h h h h h h h h h"
         "m m m c c c c c c c c c"
 }
+ */
+ .contributors {
+            margin: 0px auto;
+        }
 
-.header {
-  grid-area: h;
+        td,
+        th {
+            padding: 20px 50px 20px 20px;
+            text-align: left;
+            margin: 100px;
+            background-color:  #F6F2E7;
+        }
+
+        tr,
+        table,
+        td,
+        th {
+
+            border: none;
+            outline: none;
+
+        }
+
+        td,
+        table {
+            /* border: 7px solid black; */
+            border-collapse: collapse;
+            border-right: 7px solid white;
+            /* border-top: 7px solid rgb(255, 255, 195); */
+            /* border-bottom: 7px solid rgb(255, 255, 195); */
+            /* border-left: 7px solid rgb(255, 255, 195); */
+        }
+
+        th {
+            /* border: 7px solid black; */
+            border-collapse: collapse;
+            border-right: 7px solid white;
+            /* border-top: 7px solid rgb(255, 255, 195); */
+            border-bottom: 7px solid white;
+            /* border-left: 7px solid rgb(255, 255, 195); */
+        }
+
+        /* 
+        .heading {
+            margin: 100px;
+            width: 100%;
+        } */
+.sidebar > img {
+  max-height: 100vh;
+  margin-right: 50px;
+   height: 700px;
+  margin-top: 30px;
+  margin-left:20px;
+  width: 500px;
 }
 
-.sidebar {
-  grid-area: m;
+/* .header {
+  grid-area: h;
+} */
+
+/* .sidebar {
+  grid-area: m; */
 /*   position: absolute; */
 /*   width: 200px;
   height: 600px;
   left: 20px;
   top: 109px;
   background: #F7F2E7; */
-}
+/* } */
 
-.contributors {
+/* .contributors {
   grid-area: c;
-}
+} */
 
-.jedi {
-  width: 360px;
-  height: 360px;
-  left: 34px;
-  top: 589px;
-}
-
-.altschool__image {
-  width: 226px;
-height: 226px;
-left: 85px;
-top: 160px;
-}

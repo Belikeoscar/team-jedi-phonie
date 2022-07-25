@@ -9,34 +9,6 @@ body{
     background-color: #fff;
 }
 
-.main__container {
-  height: 100%;
-    display: grid;
-    grid-gap: 3px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 60px auto 100px;
-    grid-template-areas: 
-        "h h h h h h h h h h h h"
-        "a a a a m m m m m m m m"
-        "a a a a s s s s s s s s";
-}
-
-.header {
-  grid-area: h;
-}
-
-.image-container {
-  grid-area: a;
-}
-
-.container {
-  grid-area: m;
-}
-
-.provider {
-  grid-area: s;
-}
-
 nav{
     background-color: #fff;
     width: 100%;
@@ -170,7 +142,7 @@ main{
    justify-content: center;
     padding-top: 20px;
     max-width: 100%;
-    margin-left: 40px;
+/*     margin-left: 40px; */
     
    
 }
@@ -194,7 +166,7 @@ aside img {
 }
 
 form{
-  width: 800px;
+  width: 100%;
 
 }
 
