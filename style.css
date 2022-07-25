@@ -80,6 +80,7 @@ nav label.button:hover{
 @media (max-width:768px){
     .menu ul{
         /* display: none; */
+        justify-content: flex-start;
         position: fixed;
         top: 0;
         right: 0;
@@ -287,7 +288,9 @@ button{
 @media (max-width:768px){
     aside img{ display: none;}
 
-
+  header {
+    padding: 0 1rem;
+  }
   main{
     padding:30px
   }
