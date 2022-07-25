@@ -283,6 +283,7 @@ button{
 
 
 /*Tablet Styling*/
+
 @media (max-width:768px){
     aside img{ display: none;}
 
