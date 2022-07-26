@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+/*     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
 /*victory for president*/
 html {
@@ -10,6 +10,7 @@ html {
 }
 body{
     background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
 }
 
@@ -41,6 +42,7 @@ header{
 }
 
 .menu ul a{
+   font-family: 'Inter', sans-serif;
     font-size: 1.7rem;
     font-weight: 400;
     padding-left: 3rem;
@@ -179,12 +181,12 @@ aside {
   background-color: #F6F2E7;
 }
 .form {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
 }
 
 .alt-team {
-  width: 70%;
+  width: 71%;
   height: auto;
 /*     max-height: 100vh; */
 /*     margin-right: 50px; */
@@ -203,9 +205,10 @@ aside {
 
 
 .form-title{
-    font-size: 35px;
-    font-weight: 500;
-    
+    font-size: 2.8rem;
+    font-weight: 600;  
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 form{
@@ -214,7 +217,7 @@ form{
 }
 
 .fields{
-    margin-top: 40px;
+/*     margin-top: 40px; */
     width: 100%;
 /*     display: flex;
     align-items: center;
@@ -337,23 +340,27 @@ button{
     display: none;
 }
 
-/* @media only screen and (max-width: 1024px) and (min-width: 768px){
-    .input-fields.network {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 80%;
-    
-    }
 
-} */
 /*Tablet Styling*/
-@media (max-width:768px){
+@media only screen and (max-width: 1250px) and (min-width: 1024px) {
   aside {
-    display: none;
+    padding-top: 6rem;
+  }
+  .alt-team {
+    width: 78%;
   }
 
+  .x-img  {
+    margin: 5rem 0;
+  }
+}
+@media (max-width: 1024px) {
+    aside {
+    display: none;
+  }
+}
+
+@media (max-width:768px){
 
   header {
     padding: 0 1rem;
