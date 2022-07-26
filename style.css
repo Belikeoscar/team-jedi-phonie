@@ -160,21 +160,28 @@ main {
 
 aside {
   width: 30%;
-
+  display: flex;
+  flex-direction: column;
+  height: 87vh;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F6F2E7;
 }
 .form {
   width: 70%;
+  padding-left: 3rem;
 }
 
-aside img {
+.alt-team {
+  height: 50%
 /*     max-height: 100vh; */
 /*     margin-right: 50px; */
 /*     height: 700px; */
 /*   margin-top: 30px;
   margin-left:20px; */
-  width: 100%;
+/*   width: 100%;
   height: 500px
- 
+  */
 }
 
 
