@@ -13,10 +13,8 @@
 /* navbar styles  */
 a {
    text-decoration: none !important;
-  font-size: 1.7rem;
-    font-weight: 400;
-    padding:0 1.6rem;
-    color: #222222;
+  font-weight: 400;
+  color: #222222;
 }
   .nav__list {
     display: flex;
@@ -101,6 +99,7 @@ ul a.active {
 
 table {
   height: 350px;
+  table-layout: fixed;
 /*   font-size: 20px; */
 /*   line-height: 33px; */
   font-weight: 600;
