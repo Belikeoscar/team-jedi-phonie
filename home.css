@@ -1,0 +1,228 @@
+form{
+  width: 100%;
+
+}
+
+.fields{
+/*     margin-top: 40px; */
+    width: 100%;
+/*     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+   
+}
+
+.input-fields{
+  
+    display: flex;
+    flex-direction: column;
+    
+/*     width: calc(100% / 2 - 30px);
+    margin-bottom: 20px;
+    margin-right: 20px; */
+}
+
+.network{
+  grid-column: 1/-1;
+
+/*     display: flex;
+    flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+    width: 80%; */
+}
+
+.network .network-provider{
+    display: flex;
+    flex-direction: row;
+   width: 50%;
+    justify-content: space-between;
+  align-items: center;
+}
+
+.phone{
+    width:35%;
+  margin-top: 20px;
+}
+
+
+.input-fields label{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+   
+}
+
+.input-fields input, .input-fields select{
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    font-weight: 400;
+    color:black ;
+    border: 1px solid #aaa;
+    padding: 0 20px;
+}
+
+.input-fields input:focus{
+    border: 1px solid #CAA369;
+}
+.input-fields input::placeholder{
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.network .radio {
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.radio span{
+    margin-left: 10px;
+}
+
+.submit-btn{
+  align-self: flex-end;
+  margin-top: 2rem;
+/*     position: absolute;
+    bottom: -40px;
+    right: 50px; */
+}
+
+button{
+    width: 200px;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+   background: linear-gradient(90deg, rgba(202,163,105,1) 0%, rgba(186,148,96,1) 47%, rgba(170,133,86,1) 100%);
+    border: none;
+    border-radius: 5px;
+}
+
+.tel-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+}
+
+.tel-logo span {
+  display: inline-block;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  left: 10px;
+  z-index: 1;
+}
+
+.tel-logo input {
+  height: 100%;
+}
+
+.mtn, .airtel, .glo, .nine-mobile{
+    display: none;
+}
+
+@media (max-width:768px){
+
+/*     .network {
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    } */
+  .form {
+  width: 100%;
+}
+
+  .network .network-provider{
+   width: 70%;
+}
+
+   
+}
+
+/*Mobile styling*/
+@media (max-width: 568px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+
+   .network .network-provider{
+   width: 90%;
+}
+   
+}
+
+@media (max-width:480px){
+    .input-fields{
+        width: 100%;
+    }
+
+  .input-fields input {
+    width: 100%;
+  }
+
+  .input-fields input[type="radio"] {
+    width: auto;
+  }
+
+/*      .network {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+    } */
+  .submit-btn {
+/*         position: absolute;
+        bottom: -40px;
+        left: 0; */
+     align-self: center;
+     width: 100%;
+    }
+
+  .submit-btn button {
+    width: 100%;
+  }
+
+    .network .radio {
+        display: flex;
+        align-items: center;
+    
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    
+    .radio span {
+        margin-left: 5px;
+    }
+    .phone {
+        width: 100%;
+    }
+
+   
+    
+/*     .submit-btn {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        
+        
+    } */
+}
