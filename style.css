@@ -57,8 +57,20 @@ header{
     display: flex;
 }
 
-.menu ul a:hover, .menu ul a:visited{
+/* Feel free to uncomment if need be  */
+
+/* .menu ul a:hover, .menu ul a:visited{
     color: #CAA369;
+} */
+
+.menu ul a:hover {
+  color:  #908989;
+}
+
+
+.menu ul a.active {
+  background-color: #fff;
+  color: #CAA369;
 }
 
 nav label.button{
