@@ -250,12 +250,11 @@ form{
 }
 
 .network .network-provider{
-  
-
     display: flex;
     flex-direction: row;
-   width: 80%;
+   width: 50%;
     justify-content: space-between;
+  align-items: center;
 }
 
 .phone{
@@ -283,7 +282,7 @@ form{
 }
 
 .input-fields input:focus{
-    border: 1px solid #CAA369
+    border: 1px solid #CAA369;
 }
 .input-fields input::placeholder{
     text-align: center;
@@ -291,8 +290,7 @@ form{
 }
 
 
-
-.network .radio{
+.network .radio {
     display: flex;
     align-items: center;
 
@@ -306,7 +304,7 @@ form{
 
 .submit-btn{
   align-self: flex-end;
-  margin-top: 1rem;
+  margin-top: 2rem;
 /*     position: absolute;
     bottom: -40px;
     right: 50px; */
@@ -326,14 +324,23 @@ button{
 .tel-logo{
     display: flex;
     justify-content: flex-start;
-    align-items:center;
-    
+    align-items: center;
+    height: 50px;
 }
 
+.tel-logo span {
+  display: inline-block;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  left: 10px;
+  z-index: 1;
+}
 
-
-.tel-logo span img{
-    border-radius: 5px;
+.tel-logo input {
+  height: 100%;
 }
 
 .mtn, .airtel, .glo, .nine-mobile{
@@ -358,6 +365,10 @@ button{
     aside {
     display: none;
   }
+
+  .form {
+    width: 85%;
+  }
 }
 
 @media (max-width:768px){
@@ -369,13 +380,6 @@ button{
     padding:30px
   }
 
-    .submit-btn {
-/*         position: absolute;
-        bottom: -40px;
-        left: 0; */
-     align-self: center;
-    
-    }
 
 /*     .network {
         display: flex;
@@ -389,6 +393,10 @@ button{
   width: 100%;
 }
 
+  .network .network-provider{
+   width: 70%;
+}
+
    
 }
 
@@ -398,12 +406,25 @@ button{
   .fields {
     grid-template-columns: 1fr;
   }
+
+   .network .network-provider{
+   width: 90%;
+}
+   
 }
 
 @media (max-width:480px){
     .input-fields{
         width: 100%;
     }
+
+  .input-fields input {
+    width: 100%;
+  }
+
+  .input-fields input[type="radio"] {
+    width: auto;
+  }
 
 /*      .network {
         display: flex;
@@ -413,6 +434,17 @@ button{
 
         flex-wrap: wrap;
     } */
+  .submit-btn {
+/*         position: absolute;
+        bottom: -40px;
+        left: 0; */
+     align-self: center;
+     width: 100%;
+    }
+
+  .submit-btn button {
+    width: 100%;
+  }
 
     .network .radio {
         display: flex;
@@ -421,6 +453,7 @@ button{
         font-size: 15px;
         font-weight: 400;
     }
+
     
     .radio span {
         margin-left: 5px;
