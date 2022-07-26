@@ -64,8 +64,9 @@ form{
     outline: none;
     font-weight: 400;
     color:black ;
-    border: 1px solid #aaa;
+    border: 1px solid #8E8E8D;
     padding: 0 20px;
+  background: #FFFFFF;
 }
 
 .input-fields input:focus{
