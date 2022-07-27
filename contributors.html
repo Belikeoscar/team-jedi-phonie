@@ -5,35 +5,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Challenge contributors</title>
+  <title> Phonies Challenge</title>
   <!-- Link for icons-->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <!--Link for fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="contributors.css">
 </head>
 
 <body>
-  <div class="container">
-    <header class="header">
-      <nav>
-        <!-- <div class="logo"><a href="#"><img src="./Frame 1.svg" alt="" srcset=""></a></div> -->
+  <!--   <div class="container"> -->
+  <header class="header">
+    <a href="https://thealtschool.com/"><img src="images/altLogo.svg" alt="" width="55" height="55"></a>
+    <nav class="menu">
 
-        <ul class="nav__list">
-          <!-- <label class="button cancel"><i class='bx bx-x'></i></label> -->
-          <li><img src="./Frame 1.svg" class="alt__logo" alt="" /></li>
-          <li class="home"><a href="index.html">Home</a></li>
+      <ul>
+
+        <label class="button cancel"><i class='bx bx-x'></i></label>
+
+        <div class="links">
+          <li><a href="index.html">Home</a></li>
           <li><a class="active" href="contributors.html">Contributors</a></li>
-          <li><a href="repository.html">Repository</a></li>
-          <!-- <div class="nav-img"><img src="./Group 9.svg" alt=""></div> -->
-        </ul>
-        <!-- <label class="bars button "><i class='bx bx-menu'></i></label> -->
-      </nav>
-    </header>
+          <li><a href="https://github.com/scarnation/team-jedi-phonie">Repository</a></li>
+        </div>
 
-    <!-- <div> -->
-    <!-- <main class="main__content"> -->
-    <section class="img__container">
-      <img class="jedi__img" src="./Group 10 2.svg" />
-    </section>
+        <div class="nav-img"><img src="./Group 9.svg" alt=""></div>
+
+      </ul>
+
+      <label class="bars button "><i class='bx bx-menu'></i></label>
+
+    </nav>
+
+  </header>
+  <main>
+    <aside>
+      <!--       <img class="jedi" src="./Group 10 2.svg" alt="" /> -->
+      <img src="images/altHack.svg" alt="" width="160" height="80">
+      <svg width="44" height="53" viewBox="0 0 44 53" fill="none" xmlns="http://www.w3.org/2000/svg" class="x-img">
+        <path
+          d="M9.44176 0.636362L21.9872 22.0455L34.5327 0.636362H43.8054L26.8963 26.8182L43.8054 53H34.5327L21.9872 32.6818L9.44176 53H0.169034L16.8054 26.8182L0.169034 0.636362H9.44176Z"
+          fill="#222222" />
+      </svg>
+      <img src="images/Jedi.svg" alt="" width="100" height="50">
+      <img src="images/jediTeam.png" alt="" class="alt-team">
+    </aside>
 
     <!-- <section> -->
     <table class="contributors" border="1">
@@ -51,7 +71,7 @@
 
       <tbody>
         <tr>
-          <td>Chidiebere Oscar Nnadiukwu</td>
+          <td>Nnadiukwu Chidiebere Oscar</td>
           <td class="icons">
             <a href="https://github.com/scarnation">
               <i class='bx bx-sm bxl-github'></i>
@@ -145,11 +165,12 @@
         </tr>
       </tbody>
     </table>
-    </section>
-    </main>
-  </div>
-  </div>
-  <!--   <script src="https://use.fontawesome.com/e0e746b528.js"></script> -->
+  </main>
+
+
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <script src="index.mjs" type="module"></script>
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
 
 </html>

@@ -1,61 +1,61 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 /*     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
+
 /*victory for president*/
+
 html {
   font-size: 62.5%;
 }
-body{
-    background-color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
+
+body {
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
 }
 
-nav{
-    background-color: #fff;
+nav {
+  background-color: #fff;
 /*     width: 100%;
     max-width: 100%; */
 /*     padding: 0 15px; */
-    
 }
 
-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: auto;
-    justify-content: space-between;
-    width: 100%;
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  width: 100%;
   box-shadow: 3px 3px 2px #f5f5f5;
   padding: 0 2rem;
 }
 
 .menu ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    transition:all 0.5s ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  transition:all 0.5s ease-in-out;
     
 }
 
-.menu ul a{
-   font-family: 'Inter', sans-serif;
-    font-size: 1.7rem;
-    font-weight: 400;
-    padding-left: 3rem;
-    color: #222222;
-    text-decoration: none;
+.menu ul a {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  padding-left: 3rem;
+  color: #222222;
+  text-decoration: none;
 /*     margin: 0 8px; */
-    display: inline-flex;
-    
+  display: inline-flex;
 }
 
-
-.links{
-    display: flex;
+.links {
+  display: flex;
 }
 
 /* Feel free to uncomment if need be  */
@@ -68,20 +68,19 @@ header{
   color:  #908989;
 }
 
-
 .menu ul a.active {
   background-color: #fff;
   color: #CAA369;
 }
 
-nav label.button{
-    font-size: 30px;
-    color: #222222;
-    cursor: pointer;
-    display: none;
+nav label.button {
+  font-size: 30px;
+  color: #222222;
+  cursor: pointer;
+  display: none;
 }
 
-nav label.button:hover{
+nav label.button:hover {
     color: #CAA369;
 }
 
@@ -90,85 +89,76 @@ nav label.button:hover{
 }
 
 
-
-@media (max-width:768px){
-    .menu ul{
-        /* display: none; */
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        max-width: 220px;
-        width: 100%;
-        padding-top: 60px;
-        background-color:#F6F2E7;
-        box-shadow:0 3px 10px #ceced1;
-        transform:translateX(100%);
-      z-index:999;
+@media (max-width:768px) {
+  
+  .menu ul {
+  /* display: none; */
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    max-width: 220px;
+    width: 100%;
+    padding-top: 60px;
+    background-color:#F6F2E7;
+    box-shadow:0 3px 10px #ceced1;
+    transform:translateX(100%);
+    z-index:999;
     }
 
-    .menu ul a{
-        margin-top: 20px;
-        text-align: left;
-        font-size: 20px;
-        display:block;
-        width: 100%;
-        
+  .menu ul a {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 20px;
+    display:block;
+    width: 100%;
     }
 
-    .links{
-        display: block;
+  .links {
+    display: block;
     }
    
-    nav label.bars{
-        display: block;
+  nav label.bars {
+    display: block;
     }
 
-    nav label.cancel{
-        display: block;
-        position: fixed;
-        top: 10px;
-        right: 10px;
+  nav label.cancel {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     }
 
-      .nav-img img{
-        margin-top:180px;
-        display: block;
-        position: fixed;
-        
-        left: 12px;
+  .nav-img img {
+    margin-top:180px;
+    display: block;
+    position: fixed;
+    left: 12px;
     }
-
     
 }
-
 
 
 /*Home page styles - Desktop view*/
 
 /* main{
-    
     width: 100%;
     max-width: 100%;
     margin: auto;
-    
-
 } */
 
 main {
-    display: flex;
-/*     flex-direction: row; */
-    margin:0 auto;
-/*    align-items: center; */
-   justify-content: space-between;
+  display: flex;
+/* flex-direction: row; */
+  margin:0 auto;
+/* align-items: center; */
+  justify-content: space-between;
   align-items: flex-start;
-/*     padding-top: 20px; */
-    width: 100%;
+/* padding-top: 20px; */
+  width: 100%;
   padding: 1rem 0 1rem 2rem;
-/*     margin-left: 40px; */
-    
-   
+/* margin-left: 40px; */
 }
 
 aside {
@@ -184,12 +174,12 @@ aside {
 .alt-team {
   width: 71%;
   height: auto;
-/*     max-height: 100vh; */
-/*     margin-right: 50px; */
-/*     height: 700px; */
-/*   margin-top: 30px;
+/* max-height: 100vh; */
+/* margin-right: 50px; */
+/* height: 700px; */
+/* margin-top: 30px;
   margin-left:20px; */
-/*   width: 100%;
+/* width: 100%;
   height: 500px
   */
 }
@@ -198,21 +188,21 @@ aside {
   margin: 4.5rem 0;
 }
 
-.guide{
+.guide {
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
   color: #CAA369;
-  
 }
 
-
-
 /*Tablet Styling*/
+
 @media only screen and (max-width: 1300px) and (min-width: 1024px) {
+  
   aside {
     padding-top: 7rem;
   }
+  
   .alt-team {
     width: 78%;
   }
@@ -221,24 +211,23 @@ aside {
     margin: 5.5rem 0;
   }
 }
+
 @media (max-width: 1024px) {
-    aside {
+  
+  aside {
     display: none;
   }
+  
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
   header {
     padding: 0 1rem;
   }
+  
   main{
     padding:30px
   }
    
 }
-
-
-
-
-
