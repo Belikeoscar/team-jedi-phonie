@@ -56,13 +56,20 @@ form{
     margin-bottom: 10px;
    
 }
-.drop {
+.drop:required:invalid {
+   
+  color: #8E8E8D;
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+ 
   /* Some browsers will not display the caret when using calc, so we put the fallback first */ 
   background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
   background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+}
+option{
+  color: CAA369;
 }
 
 .input-fields input, .input-fields select{
@@ -222,6 +229,10 @@ button{
     .radio span {
         margin-left: 5px;
     }
+  #radio input[type=radio]:checked + label:after {
+ 
+  background: CAA369;
+  }
     .phone {
         width: 100%;
     }
