@@ -6,9 +6,9 @@
 .form-title{
     font-size: 2.8rem;
     font-weight: 600;  
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding-left: 40%;
-    margin-bottom: 2.0rem;
+    margin-bottom: 1.5rem;
 }
 
 .fields{
@@ -100,6 +100,10 @@ option{
     font-weight: 400;
 }
 
+input{
+    accent-color: #CAA369 ;
+    
+}
 
 .network .radio {
     display: flex;

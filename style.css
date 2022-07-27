@@ -163,9 +163,10 @@ main {
 
 aside {
   width: 28%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 6rem;
+  padding-top: 5rem;
   align-items: center;
   justify-content: space-between;
   background-color: #F6F2E7;
@@ -185,7 +186,7 @@ aside {
 }
 
 .x-img {
-  margin: 4.5rem 0;
+  margin: 4rem 0;
 }
 
 .guide {
