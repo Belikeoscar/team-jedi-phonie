@@ -34,7 +34,9 @@ table {
   border-collapse: collapse;
   border-right: 10px solid white;
 }
-
+td{
+     margin-right: 80px;
+}
 th {
   border-collapse: collapse;
   border-right: 10px solid white;
@@ -57,6 +59,7 @@ i {
   td, th {
     padding: 20px 1.5px;
     background-color:  #F6F2E7;
+ 
 }
 
   td:nth-child(3) {
