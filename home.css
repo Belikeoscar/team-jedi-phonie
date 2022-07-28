@@ -147,12 +147,21 @@ input{
     
 }
 
-.network .radio {
+.network .radio.nigeria {
     display: flex;
     align-items: center;
 
     font-size: 15px;
     font-weight: 400;
+}
+
+.network .radio.kenya {
+    display: none;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+  margin-right: 15px;
+    
 }
 
 .radio span{

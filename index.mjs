@@ -32,6 +32,43 @@ inputField.forEach(input => {
   })
 })
 
+// Changing network operators when alternating between Nigeria and Kenya
+
+let kenyanOperators = document.querySelectorAll('.radio.kenya')
+let nigerianOperators = document.querySelectorAll('.radio.nigeria')
+let select = document.querySelector('select')
+
+
+
+select.addEventListener('click', ()=>{
+    
+    if(select.value == 'Kenya'){
+        
+   kenyanOperators.forEach(item=>{
+       item.style.display = 'flex'
+   })
+
+   
+   nigerianOperators.forEach(item=>{
+       item.style.display = 'none'
+   })
+   
+}
+
+if(select.value == 'Nigeria'){
+
+    kenyanOperators.forEach(item=>{
+       item.style.display = 'none'
+   })
+   
+   nigerianOperators.forEach(item=>{
+       item.style.display = 'flex'
+   })
+    
+}
+
+})
+
 
 
 

@@ -45,3 +45,38 @@ th {
 i {
   color: black;
 }
+
+@media (max-width: 568px) {
+  
+  table {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+  td, th {
+    padding: 20px 1.5px;
+    background-color:  #F6F2E7;
+}
+
+  td:nth-child(3) {
+    text-align: center;
+}
+
+  th {
+    text-align: left;
+}
+
+td,
+table {
+/*   border-collapse: collapse; */
+  border-right: 2px solid white;
+}
+
+th {
+/*   border-collapse: collapse; */
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+   
+}
