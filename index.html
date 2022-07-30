@@ -31,7 +31,7 @@
           <li><a href="https://github.com/scarnation/team-jedi-phonie">Repository</a></li>
         </div>
 
-        <div class="nav-img"><img src="./Group 9.svg" alt=""></div>
+        <div class="nav-img"><img src="images/Group 9.svg" alt=""></div>
 
       </ul>
 
@@ -109,23 +109,23 @@
 
             </div>
 
-            <div class="network-provider">
+            <div class="network-provider" id="selectCarrier">
 
               <div class="radio nigeria">
-                <input type="radio" id="radio" name="net" value="glo">
+                <input type="radio" id="glo" name="carrier" value="glo">
                 <span>Glo</span>
               </div>
 
               <div class="radio nigeria">
-                <input type="radio" id="radio" name="net" value="mtn">
+                <input type="radio" id="mtn" name="carrier" value="mtn">
                 <span>MTN</span>
               </div>
               <div class="radio nigeria">
-                <input type="radio" id="radio" name="net" value="airtel">
+                <input type="radio" id="airtel" name="carrier" value="airtel">
                 <span>Airtel</span>
               </div>
               <div class="radio nigeria">
-                <input type="radio" id="radio" name="net" value="nine-mobile">
+                <input type="radio" id="9mobile" name="carrier" value="9mobile">
                 <span>9 Mobile</span>
 
               </div>
@@ -160,7 +160,7 @@
               <label type for="tel">Phone Number</label>
 
               <div class="tel-logo">
-                <span class="altschool"><img src="./images/Frame 1.svg" alt=""></span>
+                <span class="altschool"><img src="images/alt.svg" id="carrier-img" alt=""></span>
 
                 <!--                 <span class="mtn"><img src="./mtn-new-logo.svg" style="border-radius: 5px;" height="50px" alt=""></span>
 
@@ -170,7 +170,7 @@
                     height="50px" alt=""></span> -->
 
 
-                <input type="tel" placeholder="e.g +234 913XXXXXXX" data-selected-phone-no="" pattern="((^\+)(234){1}0?[7-9][0-1]\d{8})|((^234)0?[7-9][0-1]\d{8})|((^0)[7-9][0-1]\d{8})" list="phoneNos" autocomplete="off" required>
+                <input type="tel" placeholder="e.g +234 913XXXXXXX" data-selected-phone-no="" pattern="" id ="phoneInput" list="phoneNos" autocomplete="off" required>
                 <datalist id="phoneNos">
         </datalist>
               </div>

@@ -70,6 +70,53 @@ if(select.value == 'Nigeria'){
 })
 
 
+//Main phonie functionality
+let phoneInput = document.getElementById("phoneInput");
+
+//Regex pattern for major Nigerian Network providers
+let nigeriaCarrierPattern = {
+  mtn: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
+  
+  glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
+  
+  airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
+  
+  "9mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
+}
+
+//store selected carrier
+let selectedCarrier = document.querySelector("#selectCarrier");
+selectedCarrier.addEventListener('click', knowCarrier);
+
+//stores selected carrier in input data attribute
+function knowCarrier(e) {
+    let checkedCarrier = e.target.id;
+    if (e.target.name !== "carrier") return;
+
+    phoneInput.dataset.selectedPhoneNo = checkedCarrier;
+
+    setPatternAttribute(checkedCarrier);
+    if (phoneInput.value !== "") displayCarrier(phoneInput.value);
+}
+
+// sets input pattern to the pattern of the selected carrier
+function setPatternAttribute(carrier) {
+  phoneInput.setAttribute('pattern', nigeriaCarrierPattern[carrier]);
+}
+
+phoneInput.addEventListener('input', displayCarrier);
+
+let carrierImg = document.querySelector("#carrier-img");
+
+function displayCarrier() {
+    let checkValidity = phoneInput.checkValidity();
+    if (checkValidity) carrierImg.src = `images/${phoneInput.dataset.selectedPhoneNo}.svg`;
+    else carrierImg.src = "images/alt.svg";
+}
+
+
+
+
 
 
 
