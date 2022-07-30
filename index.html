@@ -170,7 +170,9 @@
                     height="50px" alt=""></span> -->
 
 
-                <input type="tel" placeholder="e.g +234 913XXXXXXX">
+                <input type="tel" placeholder="e.g +234 913XXXXXXX" data-selected-phone-no="" pattern="((^\+)(234){1}0?[7-9][0-1]\d{8})|((^234)0?[7-9][0-1]\d{8})|((^0)[7-9][0-1]\d{8})" list="phoneNos" autocomplete="off" required>
+                <datalist id="phoneNos">
+        </datalist>
               </div>
 
             </div>
