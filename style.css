@@ -106,6 +106,12 @@ nav label.button:hover {
     transform:translateX(100%);
     z-index:999;
     }
+  .button cancel:focus {
+    background-color:CAA369;
+    outline: none;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  }
 
   .menu ul a {
     margin-top: 20px;

@@ -40,7 +40,7 @@ i {
 }
 
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 600px) {
 
   main {
     padding: 15px 10px 10px 10px !important ;
@@ -91,7 +91,46 @@ i {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
+  
+  table {
+    width: 85%;
+    font-size: 20px;
+  }
+
+  td,
+  th {
+    padding: 20px 50px 20px 20px;
+    margin: 80px;
+}
+
+  td,
+  table {
+  border-right: 10px solid white;
+}
+
+  td {
+     margin-right: 80px;
+} 
+
+th {
+  border-right: 10px solid white;
+}
+}
+
+@media only screen and (min-width: 768px) {
+
+  table {
+    width: 100%;
+  }
+
+  td,
+  th {
+    padding: 20px 20px 20px 20px;
+}
+}
+
+@media screen and (min-width: 992px) {
 
   table {
     width: 69%;
