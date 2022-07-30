@@ -96,9 +96,10 @@ nav label.button:hover {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 60vh;
     max-width: 220px;
     width: 100%;
+    border-radius: 10px;
     padding-top: 60px;
     background-color:#F6F2E7;
     box-shadow:0 3px 10px #ceced1;
