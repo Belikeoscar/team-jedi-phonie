@@ -17,6 +17,10 @@ body {
   font-size: 1.6rem;
 }
 
+html, body, main, aside {
+  height: 100%;
+}
+
 nav {
   background-color: #fff;
 /*     width: 100%;

@@ -112,6 +112,7 @@ function displayCarrier() {
     let checkValidity = phoneInput.checkValidity();
     let formattedNo = formatPhoneNo(phoneInput.value);
 
+    validateProcess(formattedNo)
     if (formattedNo.length == 3 && formattedNo.startsWith("0")) {
       displayPrefixesSuggestions(phoneInput.value);
     }
@@ -150,6 +151,38 @@ function displayPrefixesSuggestions(phoneNo) {
         }     
     }
 }
+
+function validateProcess(phoneNo) {
+    let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+    if (!selectedCarrier) return;
+    let text = document.querySelector('#validate-process');
+    if (phoneNo.length <= 3) {
+        text.innerText = `No carrier detected yet`;
+        return;
+    }
+
+    if (phoneInput.checkValidity()) {
+      text.innerText = `phone number matches carrier ${selectedCarrier}`;
+      return;
+    }
+
+    let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
+  
+    let testValidity = regexPattern.test(phoneNo.slice(0, 11));
+    if (phoneNo.length > 11 && testValidity) {
+        text.innerText = `You are on the right track phone number matches ${selectedCarrier} but no of characters exceeded`;
+        return;
+    }
+        
+    for (let value of prefixesSuggestions[selectedCarrier]) {
+        if (value == phoneNo.slice(0, 4)) {
+            text.innerText = `You are on the right track phone number matches the selected carrier ${selectedCarrier}`;
+            return;
+        }
+    }   
+    text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+
+        }
 
 //regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
   
