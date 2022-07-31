@@ -213,6 +213,8 @@ button{
   border-radius: 5px;
   height: 40px;
   width: auto;
+  position: relative;
+  z-index: -1;
 }
 
 .mtn, .airtel, .glo, .nine-mobile{
@@ -222,6 +224,7 @@ button{
 @media (max-width: 1024px) {
   .form {
     width: 85%;
+    padding-bottom: 2rem;
   }
 }
 

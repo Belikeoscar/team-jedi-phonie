@@ -51,6 +51,7 @@ select.addEventListener('click', ()=>{
    
    nigerianOperators.forEach(item=>{
        item.style.display = 'none'
+     
    })
    
 }
@@ -59,8 +60,10 @@ if(select.value == 'Nigeria'){
 
     kenyanOperators.forEach(item=>{
        item.style.display = 'none'
+      
    })
-   
+   //i sent a whatsapp msg to u 
+  //lemme check it out
    nigerianOperators.forEach(item=>{
        item.style.display = 'flex'
    })
@@ -117,8 +120,14 @@ function displayCarrier() {
       displayPrefixesSuggestions(phoneInput.value);
     }
          
-    if (checkValidity) carrierImg.src = `images/${phoneInput.dataset.selectedPhoneNo}.svg`;
-    else carrierImg.src = "images/alt.svg";
+    if (checkValidity) {
+      carrierImg.src = `images/${phoneInput.dataset.selectedPhoneNo}.svg`;
+      carrierImg.style.height = "38px";
+    }
+    else {
+      carrierImg.src = "images/alt.svg";
+      carrierImg.style.height = "40px";
+    }
 }
 
 //formats inputted phone number
@@ -182,7 +191,7 @@ function validateProcess(phoneNo) {
     }   
     text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
 
-        }
+}
 
 //regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
   
