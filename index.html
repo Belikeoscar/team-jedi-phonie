@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
 
-  
+
 </head>
 
 <body>
@@ -66,24 +67,22 @@
       <p class="guide">Please fill the form below</p>
 
       <form action="#">
-
-
         <div class="fields">
 
 
           <div class="input-fields">
             <label for="first_name">First Name</label>
-            <input type="text" id="name" placeholder="Enter firstname" />
+            <input type="text" id="name" placeholder="Enter firstname" maxlength="40"/>
           </div>
 
           <div class="input-fields">
             <label for="last_name">Last Name</label>
-            <input type="text" id="name" placeholder="Enter Lastname" />
+            <input type="text" id="name" placeholder="Enter Lastname"  maxlength="40" />
           </div>
 
           <div class="input-fields">
             <label for="email">Email</label>
-            <input type="email" placeholder="e.g Phonie@yahoo.com" />
+            <input type="email" placeholder="e.g Phonie@yahoo.com"  maxlength="40"/>
           </div>
 
           <div class="input-fields">
@@ -97,12 +96,12 @@
 
           <div class="input-fields">
             <label for="address">Address</label>
-            <input type="text" placeholder="Enter location address">
+            <input type="text" placeholder="Enter location address"  maxlength="50">
           </div>
 
           <div class="input-fields">
             <label for="town">Town</label>
-            <input type="text" placeholder="Enter city name">
+            <input type="text" placeholder="Enter city name"  maxlength="40">
           </div>
 
           <div class="input-fields network">
@@ -111,7 +110,8 @@
 
             </div>
 
-            <div class="network-provider" id="selectCarrier">
+
+            <!--             <div class="network-provider" id="selectCarrier">
 
               <div class="radio nigeria">
                 <input type="radio" id="glo" name="carrier" value="glo">
@@ -130,9 +130,31 @@
                 <input type="radio" id="9mobile" name="carrier" value="9mobile">
                 <span>9 Mobile</span>
 
+              </div> -->
+            <div class="network-provider" id="selectCarrier">
+
+              <div class="radio nigeria">
+                <input type="radio" id="Glo" name="carrier" value="Glo">
+                <label for="Glo">Glo</label>
               </div>
 
-              <div class="radio kenya">
+              <div class="radio nigeria">
+                <input type="radio" id="MTN" name="carrier" value="MTN">
+                <label for="MTN">MTN</label>
+              </div>
+              <div class="radio nigeria">
+                <input type="radio" id="Airtel" name="carrier" value="Airtel">
+                <label for="Airtel">Airtel</label>
+              </div>
+              <div class="radio nigeria">
+                <input type="radio" id="9 Mobile" name="carrier" value="9 Mobile">
+                <label for="9 Mobile">9 Mobile</label>
+
+              </div>
+
+
+
+              <!--               <div class="radio kenya">
                 <input type="radio" id="radio" name="net" value="Safaricom">
                 <span>Safaricom</span>
 
@@ -152,7 +174,7 @@
                 <input type="radio" id="radio" name="net" value="finserve">
                 <span>Equitel</span>
 
-              </div>
+              </div> -->
 
             </div>
 
@@ -160,7 +182,7 @@
 
             <div class="input-fields phone">
               <label type for="tel">Phone Number</label>
-  <p id="validate-process"></p>
+              <p id="validate-process"></p>
               <div class="tel-logo">
                 <span class="altschool"><img src="images/alt.svg" id="carrier-img" alt=""></span>
 
@@ -172,20 +194,21 @@
                     height="50px" alt=""></span> -->
 
 
-                
-                <input type="tel" placeholder="e.g +234 913XXXXXXX" data-selected-phone-no="" pattern="" id ="phoneInput" list="suggest-prefixes" autocomplete="off" required>
-          <datalist id="suggest-prefixes">
-        </datalist>
+
+                <input type="tel" placeholder="e.g +234 913XXXXXXX" data-selected-phone-no="" pattern="" id="phoneInput"
+                  list="suggest-prefixes" autocomplete="off" required>
+                <datalist id="suggest-prefixes">
+                </datalist>
               </div>
 
             </div>
 
-
-            <div class="submit-btn">
-              <button>Submit</button>
-            </div>
-
+        
+            </div <div class="submit-btn">
+            <button>Submit</button>
           </div>
+
+        </div>
 
 
 

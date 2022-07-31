@@ -47,7 +47,8 @@
 .network .network-provider{
     display: flex;
     flex-direction: row;
-   width: 50%;
+  flex-wrap: wrap;
+   width: 60%;
     justify-content: space-between;
   align-items: center;
 }
@@ -57,12 +58,10 @@
   margin-top: 20px;
 }
 
-
 .input-fields label{
     font-size: 15px;
     font-weight: 400;
-    margin-bottom: 10px;
-   
+    margin-bottom: 10px; 
 }
 .drop:required:invalid {
    
@@ -164,8 +163,9 @@ input{
     
 }
 
-.radio span{
+.radio label{
     margin-left: 10px;
+    margin-bottom: 0;
 }
 
 .submit-btn{
@@ -313,7 +313,7 @@ button{
     }
 
     
-    .radio span {
+    .radio label {
         margin-left: 5px;
       
     }

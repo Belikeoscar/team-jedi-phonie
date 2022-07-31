@@ -34,45 +34,69 @@ inputField.forEach(input => {
 
 // Changing network operators when alternating between Nigeria and Kenya
 
-let kenyanOperators = document.querySelectorAll('.radio.kenya')
-let nigerianOperators = document.querySelectorAll('.radio.nigeria')
-let select = document.querySelector('select')
+// let kenyanOperators = document.querySelectorAll('.radio.kenya')
+// let nigerianOperators = document.querySelectorAll('.radio.nigeria')
+let countryCarrier = {
+  Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
+  kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
+}
+let selectNationality = document.querySelector('select');
+selectNationality.addEventListener('change', displayCountryCarriers);
 
+function displayCountryCarriers(e) {
+  let selectElement = e.target;
+  let selectedCountry = selectElement.options[selectElement.selectedIndex].text;
 
+  console.log(selectElement.options[selectElement.selectedIndex])
+  let radioContainers = document.querySelectorAll(".radio");
 
+  for (let i = 0; i < radioContainers.length; i++) {
+    let input = radioContainers[i].querySelector("input");
+    let label = radioContainers[i].querySelector("label");
+    console.log(selectedCountry)
+ console.log(countryCarrier[selectedCountry])
+    input.setAttribute('id', countryCarrier[selectedCountry][i]);
+    input.setAttribute('value', countryCarrier[selectedCountry][i]);
 
-
-
-select.addEventListener('click', () => {
-
-  if (select.value == 'Kenya') {
-
-    kenyanOperators.forEach(item => {
-      item.style.display = 'flex'
-    })
-
-
-    nigerianOperators.forEach(item => {
-      item.style.display = 'none'
-
-    })
-
+    label.setAttribute('for', countryCarrier[selectedCountry][i]);
   }
+}
 
-  if (select.value == 'Nigeria') {
+//boo boo | I am tired | i know love but just pull through for us i am sad that i didnt finish the alt vids this far to js syntax before this on the good side you are learning and actually working on a project woth showing off
 
-    kenyanOperators.forEach(item => {
-      item.style.display = 'none'
 
-    })
 
-    nigerianOperators.forEach(item => {
-      item.style.display = 'flex'
-    })
 
-  }
+// select.addEventListener('click', () => {
 
-})
+//   if (select.value == 'Kenya') {
+
+//     kenyanOperators.forEach(item => {
+//       item.style.display = 'flex'
+//     })
+
+
+//     nigerianOperators.forEach(item => {
+//       item.style.display = 'none'
+
+//     })
+
+//   }
+
+//   if (select.value == 'Nigeria') {
+
+//     kenyanOperators.forEach(item => {
+//       item.style.display = 'none'
+
+//     })
+
+//     nigerianOperators.forEach(item => {
+//       item.style.display = 'flex'
+//     })
+
+//   }
+
+// })
 
 
 //Main phonie functionality
@@ -80,13 +104,13 @@ let phoneInput = document.getElementById("phoneInput");
 
 //Regex pattern for major Nigerian Network providers
 let nigeriaCarrierPattern = {
-  mtn: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
+  MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
 
-  glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
+  Glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
 
-  airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
+  Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
 
-  "9mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
+  "9 Mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
 }
 
 //store selected carrier
@@ -159,10 +183,10 @@ function formatPhoneNo(phoneNo) {
 
 //stores possible carrier prefixes
 let prefixesSuggestions = {
-  mtn: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"],
-  glo: ["0705", "0805", "0807", "0811", "0815", "0905", "0915"],
-  airtel: ["0701", "0702", "0704", "0708", "0802", "0808", "0901", "0902", "0904", "0904"],
-  "9mobile": ["0809", "0817", "0818", "0908", "0909"]
+  MTN: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"],
+  Glo: ["0705", "0805", "0807", "0811", "0815", "0905", "0915"],
+  Airtel: ["0701", "0702", "0704", "0708", "0802", "0808", "0901", "0902", "0904", "0904"],
+  "9 Mobile": ["0809", "0817", "0818", "0908", "0909"]
 }
 
 //Displays possible carrier prefixes to user
@@ -219,8 +243,7 @@ function validateProcess(phoneNo) {
 
 }
 
-console.log(phoneInput.dataset.selectedPhoneNo)
-console.log(typeof phoneInput.dataset.selectedPhoneNo)
+
 //regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
 
  // safari: ^(?:254|\+254|0)?((?:(?:7(?:(?:[01249][0-9])|(?:5[789])|(?:6[89])))|(?:1(?:[1][0-5])))[0-9]{6})$
