@@ -16,6 +16,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
 }
+main{
+  padding-top: 65px;
+}
 
 html, body, main, aside {
   height: 100%;
@@ -30,6 +33,11 @@ nav {
 
 header {
   display: flex;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+   overflow: hidden;
+  
   flex-direction: row;
   align-items: center;
   margin: auto;
@@ -167,7 +175,7 @@ main {
   align-items: flex-start;
 /* padding-top: 20px; */
   width: 100%;
-  padding: 1rem 0 1rem 2rem;
+  padding: 6.5rem 0 1rem 2rem;
 /* margin-left: 40px; */
 }
 
@@ -243,6 +251,6 @@ aside {
   }
   
   main{
-    padding:30px
+    padding:65px,30px,30px,30px;
   }
 }

@@ -40,35 +40,37 @@ let select = document.querySelector('select')
 
 
 
-select.addEventListener('click', ()=>{
-    
-    if(select.value == 'Kenya'){
-        
-   kenyanOperators.forEach(item=>{
-       item.style.display = 'flex'
-   })
 
-   
-   nigerianOperators.forEach(item=>{
-       item.style.display = 'none'
-     
-   })
-   
-}
 
-if(select.value == 'Nigeria'){
 
-    kenyanOperators.forEach(item=>{
-       item.style.display = 'none'
-      
-   })
-   //i sent a whatsapp msg to u 
-  //lemme check it out
-   nigerianOperators.forEach(item=>{
-       item.style.display = 'flex'
-   })
-    
-}
+select.addEventListener('click', () => {
+
+  if (select.value == 'Kenya') {
+
+    kenyanOperators.forEach(item => {
+      item.style.display = 'flex'
+    })
+
+
+    nigerianOperators.forEach(item => {
+      item.style.display = 'none'
+
+    })
+
+  }
+
+  if (select.value == 'Nigeria') {
+
+    kenyanOperators.forEach(item => {
+      item.style.display = 'none'
+
+    })
+
+    nigerianOperators.forEach(item => {
+      item.style.display = 'flex'
+    })
+
+  }
 
 })
 
@@ -79,11 +81,11 @@ let phoneInput = document.getElementById("phoneInput");
 //Regex pattern for major Nigerian Network providers
 let nigeriaCarrierPattern = {
   mtn: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
-  
+
   glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
-  
+
   airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
-  
+
   "9mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
 }
 
@@ -91,15 +93,19 @@ let nigeriaCarrierPattern = {
 let selectedCarrier = document.querySelector("#selectCarrier");
 selectedCarrier.addEventListener('click', knowCarrier);
 
+let text = document.querySelector('#validate-process');
+
 //stores selected carrier in input data attribute
 function knowCarrier(e) {
-    let checkedCarrier = e.target.id;
-    if (e.target.name !== "carrier") return;
+  let checkedCarrier = e.target.id;
+  if (e.target.name !== "carrier") return;
 
-    phoneInput.dataset.selectedPhoneNo = checkedCarrier;
+  phoneInput.dataset.selectedPhoneNo = checkedCarrier;
+  phoneInput.disabled = false;
+  text.innerText = "";
 
-    setPatternAttribute(checkedCarrier);
-    if (phoneInput.value !== "") displayCarrier(phoneInput.value);
+  setPatternAttribute(checkedCarrier);
+  if (phoneInput.value !== "") displayCarrier(phoneInput.value);
 }
 
 // sets input pattern to the pattern of the selected carrier
@@ -108,35 +114,45 @@ function setPatternAttribute(carrier) {
 }
 
 phoneInput.addEventListener('input', displayCarrier);
+phoneInput.addEventListener('click', disableInput);
 
 let carrierImg = document.querySelector("#carrier-img");
 
-function displayCarrier() {
-    let checkValidity = phoneInput.checkValidity();
-    let formattedNo = formatPhoneNo(phoneInput.value);
 
-    validateProcess(formattedNo)
-    if (formattedNo.length == 3 && formattedNo.startsWith("0")) {
-      displayPrefixesSuggestions(phoneInput.value);
-    }
-         
-    if (checkValidity) {
-      carrierImg.src = `images/${phoneInput.dataset.selectedPhoneNo}.svg`;
-      carrierImg.style.height = "38px";
-    }
-    else {
-      carrierImg.src = "images/alt.svg";
-      carrierImg.style.height = "40px";
-    }
+function disableInput() {
+  if (!phoneInput.dataset.selectedPhoneNo) {
+    phoneInput.disabled = true;
+    text.innerText = `Please select a carrier above`;
+    text.style.color = "#d64d22";
+  }
+}
+
+function displayCarrier() {
+  let checkValidity = phoneInput.checkValidity();
+  let formattedNo = formatPhoneNo(phoneInput.value);
+
+  validateProcess(formattedNo)
+  if (formattedNo.length == 3 && formattedNo.startsWith("0")) {
+    displayPrefixesSuggestions(phoneInput.value);
+  }
+
+  if (checkValidity) {
+    carrierImg.src = `images/${phoneInput.dataset.selectedPhoneNo}.svg`;
+    carrierImg.style.height = "38px";
+  }
+  else {
+    carrierImg.src = "images/alt.svg";
+    carrierImg.style.height = "40px";
+  }
 }
 
 //formats inputted phone number
 function formatPhoneNo(phoneNo) {
-    if (phoneNo.startsWith("+2340")) phoneNo = phoneNo.replace("+234", "");
-    if (phoneNo.startsWith("2340")) phoneNo = phoneNo.replace("234", "");
-    if (phoneNo.startsWith("+234")) phoneNo = phoneNo.replace("+234", "0");
-    if (phoneNo.startsWith("234")) phoneNo = phoneNo.replace("234", "0");
-    return phoneNo;
+  if (phoneNo.startsWith("+2340")) phoneNo = phoneNo.replace("+234", "");
+  if (phoneNo.startsWith("2340")) phoneNo = phoneNo.replace("234", "");
+  if (phoneNo.startsWith("+234")) phoneNo = phoneNo.replace("+234", "0");
+  if (phoneNo.startsWith("234")) phoneNo = phoneNo.replace("234", "0");
+  return phoneNo;
 }
 
 //stores possible carrier prefixes
@@ -147,58 +163,68 @@ let prefixesSuggestions = {
   "9mobile": ["0809", "0817", "0818", "0908", "0909"]
 }
 
+//Displays possible carrier prefixes to user
 function displayPrefixesSuggestions(phoneNo) {
-    let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
-    if (!prefixesSuggestions[selectedCarrier]) return;
-    let dataList = document.querySelector('#suggest-prefixes');
-    dataList.replaceChildren();
-    for (let value of prefixesSuggestions[selectedCarrier]) {
-        if (value.startsWith(phoneNo)) {
-          let option = document.createElement('option');
-          option.value = value;
-          dataList.append(option);
-        }     
+  let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+  if (!prefixesSuggestions[selectedCarrier]) return;
+  let dataList = document.querySelector('#suggest-prefixes');
+  dataList.replaceChildren();
+  for (let value of prefixesSuggestions[selectedCarrier]) {
+    if (value.startsWith(phoneNo)) {
+      let option = document.createElement('option');
+      option.value = value;
+      dataList.append(option);
     }
+  }
 }
 
-function validateProcess(phoneNo) {
-    let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
-    if (!selectedCarrier) return;
-    let text = document.querySelector('#validate-process');
-    if (phoneNo.length <= 3) {
-        text.innerText = `No carrier detected yet`;
-        return;
-    }
 
-    if (phoneInput.checkValidity()) {
-      text.innerText = `phone number matches carrier ${selectedCarrier}`;
+
+//checks if user is on the right track as input is entered
+function validateProcess(phoneNo) {
+  let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+  if (!selectedCarrier) return;
+  if (phoneNo.length <= 3) {
+    text.innerText = `No carrier detected yet`;
+    text.style.color = "#d64d22";
+    return;
+  }
+
+  if (phoneInput.checkValidity()) {
+    text.innerText = `phone number matches carrier: ${selectedCarrier}`;
+    text.style.color = "#329721";
+    return;
+  }
+
+  let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
+
+  let testValidity = regexPattern.test(phoneNo.slice(0, 11));
+  if (phoneNo.length > 11 && testValidity) {
+    text.innerText = `You are on the right track phone number matches ${selectedCarrier} but no of characters exceeded`;
+    text.style.color = "#d64d22";
+    return;
+  }
+
+  for (let value of prefixesSuggestions[selectedCarrier]) {
+    if (value == phoneNo.slice(0, 4)) {
+      text.innerText = `You are on the right track so far`;
+      text.style.color = "#329721";
       return;
     }
-
-    let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
-  
-    let testValidity = regexPattern.test(phoneNo.slice(0, 11));
-    if (phoneNo.length > 11 && testValidity) {
-        text.innerText = `You are on the right track phone number matches ${selectedCarrier} but no of characters exceeded`;
-        return;
-    }
-        
-    for (let value of prefixesSuggestions[selectedCarrier]) {
-        if (value == phoneNo.slice(0, 4)) {
-            text.innerText = `You are on the right track phone number matches the selected carrier ${selectedCarrier}`;
-            return;
-        }
-    }   
-    text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+  }
+  text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+  text.style.color = "#d64d22";
 
 }
 
+console.log(phoneInput.dataset.selectedPhoneNo)
+console.log(typeof phoneInput.dataset.selectedPhoneNo)
 //regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
-  
+
  // safari: ^(?:254|\+254|0)?((?:(?:7(?:(?:[01249][0-9])|(?:5[789])|(?:6[89])))|(?:1(?:[1][0-5])))[0-9]{6})$
   //i saw nwei this time figuring this thing out 
  // airtel: ^(?:254|\+254|0)?((?:(?:7(?:(?:3[0-9])|(?:5[0-6])|(8[5-9])))|(?:1(?:[0][0-2])))[0-9]{6})$
-  
+
 //  "telcom/Orange": ^(?:254|\+254|0)?(77[0-6][0-9]{6})$
 
 
