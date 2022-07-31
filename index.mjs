@@ -243,6 +243,8 @@ function validateProcess(phoneNo) {
 
 }
 
+// Password
+
 
 //regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
 
