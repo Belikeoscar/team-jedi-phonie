@@ -103,6 +103,7 @@ function knowCarrier(e) {
   phoneInput.dataset.selectedPhoneNo = checkedCarrier;
   phoneInput.disabled = false;
   text.innerText = "";
+  phoneInput.style.backgroundColor = "#fff";
 
   setPatternAttribute(checkedCarrier);
   if (phoneInput.value !== "") displayCarrier(phoneInput.value);
@@ -118,12 +119,13 @@ phoneInput.addEventListener('click', disableInput);
 
 let carrierImg = document.querySelector("#carrier-img");
 
-
+//Disables input field if carrier isn't selected
 function disableInput() {
   if (!phoneInput.dataset.selectedPhoneNo) {
     phoneInput.disabled = true;
     text.innerText = `Please select a carrier above`;
     text.style.color = "#d64d22";
+    phoneInput.style.backgroundColor = "#f4f4f0";
   }
 }
 
