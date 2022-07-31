@@ -110,8 +110,45 @@ let carrierImg = document.querySelector("#carrier-img");
 
 function displayCarrier() {
     let checkValidity = phoneInput.checkValidity();
+    let formattedNo = formatPhoneNo(phoneInput.value);
+
+    if (formattedNo.length == 3 && formattedNo.startsWith("0")) {
+      displayPrefixesSuggestions(phoneInput.value);
+    }
+         
     if (checkValidity) carrierImg.src = `images/${phoneInput.dataset.selectedPhoneNo}.svg`;
     else carrierImg.src = "images/alt.svg";
+}
+
+//formats inputted phone number
+function formatPhoneNo(phoneNo) {
+    if (phoneNo.startsWith("+2340")) phoneNo = phoneNo.replace("+234", "");
+    if (phoneNo.startsWith("2340")) phoneNo = phoneNo.replace("234", "");
+    if (phoneNo.startsWith("+234")) phoneNo = phoneNo.replace("+234", "0");
+    if (phoneNo.startsWith("234")) phoneNo = phoneNo.replace("234", "0");
+    return phoneNo;
+}
+
+//stores possible carrier prefixes
+let prefixesSuggestions = {
+  mtn: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"],
+  glo: ["0705", "0805", "0807", "0811", "0815", "0905", "0915"],
+  airtel: ["0701", "0702", "0704", "0708", "0802", "0808", "0901", "0902", "0904", "0904"],
+  "9mobile": ["0809", "0817", "0818", "0908", "0909"]
+}
+
+function displayPrefixesSuggestions(phoneNo) {
+    let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+    if (!prefixesSuggestions[selectedCarrier]) return;
+    let dataList = document.querySelector('#suggest-prefixes');
+    dataList.replaceChildren();
+    for (let value of prefixesSuggestions[selectedCarrier]) {
+        if (value.startsWith(phoneNo)) {
+          let option = document.createElement('option');
+          option.value = value;
+          dataList.append(option);
+        }     
+    }
 }
 
 //regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
