@@ -32,6 +32,8 @@ inputField.forEach(input => {
   })
 })
 
+//Main phonie functionality
+
 // Changing network operators when alternating between Nigeria and Kenya
 
 let phoneInput = document.getElementById("phoneInput");
@@ -40,50 +42,6 @@ let countryCarrier = {
   Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
   Kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
 }
-let selectNationality = document.querySelector('select');
-selectNationality.addEventListener('change', displayCountryCarriers);
-
-function displayCountryCarriers(e) {
-  let selectElement = e.target;
-  let selectedCountry = selectElement.options[selectElement.selectedIndex].text;
-
-  phoneInput.dataset.selectedCountry = selectedCountry;
-
-  let radioContainers = document.querySelectorAll(".radio");
-
-  for (let i = 0; i < radioContainers.length; i++) {
-    let input = radioContainers[i].querySelector("input");
-    let label = radioContainers[i].querySelector("label");
-
-    input.setAttribute('id', countryCarrier[selectedCountry][i]);
-    input.setAttribute('value', countryCarrier[selectedCountry][i]);
-
-    label.setAttribute('for', countryCarrier[selectedCountry][i]);
-    label.innerText = countryCarrier[selectedCountry][i];
-  }
-}
-
-
-
-let popup = document.getElementById("popup");
-let submitForm = document.querySelector('#submit-form');
-submitForm.addEventListener('click', openPopUp)
-function openPopUp(e) {
-  if (phoneInput.checkValidity()) {
-    e.preventDefault();
-    popup.classList.add("open-popup");
-  }
-
-}
-function closePopup() {
-  popup.classList.remove(openPopup)
-}
-
-
-
-
-//Main phonie functionality
-
 
 //Regex pattern for major Nigerian Network providers
 let countryCarrierPattern = {
@@ -105,6 +63,54 @@ let countryCarrierPattern = {
 
     Equitel: "^(?:254|\\+254|0)0??(76[34][0-9]{6})$"
   }
+}
+
+let selectNationality = document.querySelector('select');
+selectNationality.addEventListener('change', displayCountryCarriers);
+
+function displayCountryCarriers(e) {
+  let selectElement = e.target;
+  let selectedCountry = selectElement.options[selectElement.selectedIndex].text;
+
+  phoneInput.dataset.selectedCountry = selectedCountry;
+
+  //selects all radio button containers
+  let radioContainers = document.querySelectorAll(".radio");
+
+  for (let i = 0; i < radioContainers.length; i++) {
+    let input = radioContainers[i].querySelector("input");
+    let label = radioContainers[i].querySelector("label");
+
+    input.setAttribute('id', countryCarrier[selectedCountry][i]);
+    input.setAttribute('value', countryCarrier[selectedCountry][i]);
+
+    label.setAttribute('for', countryCarrier[selectedCountry][i]);
+    label.innerText = countryCarrier[selectedCountry][i];
+
+    if (input.checked)  {
+      phoneInput.setAttribute('pattern', countryCarrierPattern[selectedCountry][countryCarrier[selectedCountry][i]]);
+
+      phoneInput.dataset.selectedPhoneNo = countryCarrier[selectedCountry][i];
+
+      displayCarrier();
+    }
+  }
+}
+
+
+
+let popup = document.getElementById("popup");
+let submitForm = document.querySelector('#submit-form');
+submitForm.addEventListener('click', openPopUp)
+function openPopUp(e) {
+  if (phoneInput.checkValidity()) {
+    e.preventDefault();
+    popup.classList.add("open-popup");
+  }
+
+}
+function closePopup() {
+  popup.classList.remove(openPopup)
 }
 
 
