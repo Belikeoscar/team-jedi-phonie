@@ -65,6 +65,7 @@
 .form {
   width: 62%;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .form-title{
@@ -235,7 +236,7 @@ input{
     right: 50px; */
 }
 
-button{
+.home-btn.btn{
     width: 200px;
     padding: 8px 16px;
     font-size: 20px;
@@ -290,7 +291,7 @@ button{
 @media (max-width: 1024px) {
   .form {
     width: 85%;
-    padding-bottom: 2rem;
+    
   }
 }
 
@@ -359,7 +360,7 @@ button{
      width: 100%;
     }
 
-  .submit-btn button {
+  .submit-btn #submit-form {
     width: 100%;
   }
 

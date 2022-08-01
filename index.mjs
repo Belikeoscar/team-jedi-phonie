@@ -61,45 +61,25 @@ function displayCountryCarriers(e) {
   }
 }
 
-//boo boo | I am tired | i know love but just pull through for us i am sad that i didnt finish the alt vids this far to js syntax before this on the good side you are learning and actually working on a project woth showing off
+let phoneInput = document.getElementById("phoneInput");
 
-
-
-
-// select.addEventListener('click', () => {
-
-//   if (select.value == 'Kenya') {
-
-//     kenyanOperators.forEach(item => {
-//       item.style.display = 'flex'
-//     })
-
-
-//     nigerianOperators.forEach(item => {
-//       item.style.display = 'none'
-
-//     })
-
-//   }
-
-//   if (select.value == 'Nigeria') {
-
-//     kenyanOperators.forEach(item => {
-//       item.style.display = 'none'
-
-//     })
-
-//     nigerianOperators.forEach(item => {
-//       item.style.display = 'flex'
-//     })
-
-//   }
-
-// })
+let popup = document.getElementById("popup");
+let submitForm = document.querySelector('#submit-form');
+submitForm.addEventListener('click', openPopUp)
+  function openPopUp(e){
+    if (phoneInput.checkValidity()) {
+      e.preventDefault();
+      popup.classList.add("open-popup");
+    }
+    
+  }
+  function closePopup(){
+    popup.classList.remove(openPopup)
+  }
 
 
 //Main phonie functionality
-let phoneInput = document.getElementById("phoneInput");
+
 
 //Regex pattern for major Nigerian Network providers
 let nigeriaCarrierPattern = {
