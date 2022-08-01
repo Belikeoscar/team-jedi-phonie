@@ -34,8 +34,8 @@ inputField.forEach(input => {
 
 // Changing network operators when alternating between Nigeria and Kenya
 
-// let kenyanOperators = document.querySelectorAll('.radio.kenya')
-// let nigerianOperators = document.querySelectorAll('.radio.nigeria')
+let phoneInput = document.getElementById("phoneInput");
+
 let countryCarrier = {
   Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
   Kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
@@ -47,6 +47,8 @@ function displayCountryCarriers(e) {
   let selectElement = e.target;
   let selectedCountry = selectElement.options[selectElement.selectedIndex].text;
 
+  phoneInput.dataset.selectedCountry = selectedCountry;
+  
   let radioContainers = document.querySelectorAll(".radio");
 
   for (let i = 0; i < radioContainers.length; i++) {
@@ -61,7 +63,7 @@ function displayCountryCarriers(e) {
   }
 }
 
-let phoneInput = document.getElementById("phoneInput");
+
 
 let popup = document.getElementById("popup");
 let submitForm = document.querySelector('#submit-form');
@@ -82,15 +84,27 @@ submitForm.addEventListener('click', openPopUp)
 
 
 //Regex pattern for major Nigerian Network providers
-let nigeriaCarrierPattern = {
-  MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
-
-  Glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
-
-  Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
-
-  "9 Mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
+let countryCarrierPattern = {
+  Nigeria: {
+      MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
+  
+    Glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
+  
+    Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
+  
+    "9 Mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
+  },
+  Kenya: {
+      Safaricom: "^(?:254|\\+254|0)?0?((?:(?:7(?:(?:[01249][0-9])|(?:5[789])|(?:6[89])))|(?:1(?:[1][0-5])))[0-9]{6})$",
+  
+    Airtel: "^(?:254|\\+254|0)0??((?:(?:7(?:(?:3[0-9])|(?:5[0-6])|(8[5-9])))|(?:1(?:[0][0-2])))[0-9]{6})$",
+  
+    Telkom: "^(?:254|\\+254|0)0??(77[0-6][0-9]{6})$",
+  
+    Equitel: "^(?:254|\\+254|0)0??(76[34][0-9]{6})$"
+  }
 }
+
 
 //store selected carrier
 let selectedCarrier = document.querySelector("#selectCarrier");
@@ -114,7 +128,8 @@ function knowCarrier(e) {
 
 // sets input pattern to the pattern of the selected carrier
 function setPatternAttribute(carrier) {
-  phoneInput.setAttribute('pattern', nigeriaCarrierPattern[carrier]);
+  console.log("carrier");
+  phoneInput.setAttribute('pattern', countryCarrierPattern[phoneInput.dataset.selectedCountry][carrier]);
 }
 
 phoneInput.addEventListener('input', displayCarrier);
@@ -135,10 +150,12 @@ function disableInput() {
 function displayCarrier() {
   let checkValidity = phoneInput.checkValidity();
   let formattedNo = formatPhoneNo(phoneInput.value);
-
-  validateProcess(formattedNo)
+  
+  if (phoneInput.dataset.selectedCountry == "Nigeria") validateNCarrierProcess(formattedNo)
+  // else validateKCarrierProcess(formattedNo)
+  
   if (formattedNo.length == 3 && formattedNo.startsWith("0")) {
-    displayPrefixesSuggestions(phoneInput.value);
+    displayPrefixesSuggestions(phoneInput.value, formattedNo);
   }
 
   if (checkValidity) {
@@ -154,30 +171,40 @@ function displayCarrier() {
 //formats inputted phone number
 function formatPhoneNo(phoneNo) {
   if (phoneNo.startsWith("+2340")) phoneNo = phoneNo.replace("+234", "");
+  if (phoneNo.startsWith("+2540")) phoneNo = phoneNo.replace("+254", "");
+  
   if (phoneNo.startsWith("2340")) phoneNo = phoneNo.replace("234", "");
+  if (phoneNo.startsWith("2540")) phoneNo = phoneNo.replace("254", "");
+  
   if (phoneNo.startsWith("+234")) phoneNo = phoneNo.replace("+234", "0");
+  if (phoneNo.startsWith("+254")) phoneNo = phoneNo.replace("+254", "0");
+  
   if (phoneNo.startsWith("234")) phoneNo = phoneNo.replace("234", "0");
+  if (phoneNo.startsWith("254")) phoneNo = phoneNo.replace("254", "0");
   return phoneNo;
 }
 
 //stores possible carrier prefixes
 let prefixesSuggestions = {
-  MTN: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"],
+    MTN: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"],
   Glo: ["0705", "0805", "0807", "0811", "0815", "0905", "0915"],
   Airtel: ["0701", "0702", "0704", "0708", "0802", "0808", "0901", "0902", "0904", "0904"],
   "9 Mobile": ["0809", "0817", "0818", "0908", "0909"]
+  
 }
 
 //Displays possible carrier prefixes to user
-function displayPrefixesSuggestions(phoneNo) {
+function displayPrefixesSuggestions(phoneNo, formattedNo) {
   let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+  console.log(selectedCarrier)
   if (!prefixesSuggestions[selectedCarrier]) return;
   let dataList = document.querySelector('#suggest-prefixes');
   dataList.replaceChildren();
   for (let value of prefixesSuggestions[selectedCarrier]) {
-    if (value.startsWith(phoneNo)) {
+    if (value.startsWith(formattedNo)) {
       let option = document.createElement('option');
-      option.value = value;
+  
+      option.value = phoneNo + value.slice(-1);
       dataList.append(option);
     }
   }
@@ -186,7 +213,7 @@ function displayPrefixesSuggestions(phoneNo) {
 
 
 //checks if user is on the right track as input is entered
-function validateProcess(phoneNo) {
+function validateNCarrierProcess(phoneNo) {
   let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
   if (!selectedCarrier) return;
   if (phoneNo.length <= 3) {
@@ -221,6 +248,16 @@ function validateProcess(phoneNo) {
   text.style.color = "#d64d22";
 
 }
+
+// function validateKCarrierProcess(phoneNo) {
+//   let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+//   if (!selectedCarrier) return;
+//   if (phoneNo.length <= 3) {
+//     text.innerText = `No carrier detected yet`;
+//     text.style.color = "#d64d22";
+//     return;
+//   }
+// }
 
 // Password
 
