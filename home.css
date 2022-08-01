@@ -10,10 +10,16 @@
   top:50%;
   left:50%;
   box-shadow: 0 2px 4px #C1C1C1;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%) scale(0.1);
   text-align: cennter;
   padding:0 30px 30px;
+  visibility: hidden;
   
+}
+.open-popup{
+  visibility: visible;
+  top:50%;
+  transform: translate(-50%, -50%) scale(1);
 }
 .popup img{
   width:100px;
