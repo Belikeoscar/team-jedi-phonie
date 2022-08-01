@@ -39,6 +39,9 @@ submitForm.addEventListener('click', openPopUp);
 let close = document.querySelector("#close");
 close.addEventListener('click', closePopup);
 
+let resetBtn = document.querySelector("#reset-btn");
+resetBtn.addEventListener('click', resetToDefault);
+
 function openPopUp(e) {
   if (phoneInput.checkValidity()) {
     e.preventDefault();
@@ -48,6 +51,15 @@ function openPopUp(e) {
 }
 function closePopup() {
   popup.classList.remove("open-popup")
+}
+
+function resetToDefault() {
+  let img = document.querySelector("#carrier-img");
+  let validateProcessText = document.querySelector("#validate-process");
+  
+  img.src = "images/alt.svg";
+  img.style.height = "40px";
+  validateProcessText.innerText = "";
 }
 
 //Main phonie functionality
@@ -92,6 +104,12 @@ function displayCountryCarriers(e) {
 
   phoneInput.dataset.selectedCountry = selectedCountry;
 
+  if (selectedCountry == "Nigeria") {
+    phoneInput.setAttribute('placeholder', "e.g +234 913XXXXXXX")
+  } else {
+    phoneInput.setAttribute('placeholder', "e.g +254 748 xxxxxx")
+  }
+  
   //selects all radio button containers
   let radioContainers = document.querySelectorAll(".radio");
 
