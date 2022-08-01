@@ -32,6 +32,24 @@ inputField.forEach(input => {
   })
 })
 
+let popup = document.getElementById("popup");
+let submitForm = document.querySelector('#submit-form');
+submitForm.addEventListener('click', openPopUp);
+
+let close = document.querySelector("#close");
+close.addEventListener('click', closePopup);
+
+function openPopUp(e) {
+  if (phoneInput.checkValidity()) {
+    e.preventDefault();
+    popup.classList.add("open-popup");
+  }
+
+}
+function closePopup() {
+  popup.classList.remove("open-popup")
+}
+
 //Main phonie functionality
 
 // Changing network operators when alternating between Nigeria and Kenya
@@ -98,20 +116,6 @@ function displayCountryCarriers(e) {
 }
 
 
-
-let popup = document.getElementById("popup");
-let submitForm = document.querySelector('#submit-form');
-submitForm.addEventListener('click', openPopUp)
-function openPopUp(e) {
-  if (phoneInput.checkValidity()) {
-    e.preventDefault();
-    popup.classList.add("open-popup");
-  }
-
-}
-function closePopup() {
-  popup.classList.remove(openPopup)
-}
 
 
 //store selected carrier
