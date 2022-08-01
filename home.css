@@ -4,7 +4,6 @@
   width: 400px;
   background: #F6F2E7;
   border-radius: 10px;
-  justify-content: center;
   align-content: center;
   position: absolute;
   top:50%;
@@ -37,28 +36,34 @@
 }
 .texting{
   display: flex;
+  padding-left: 20px;
 
   flex-direction: column;
+}
+.popup .close{
+  /*padding: 325px;*/
+  font-size: 30px;
+  margin-top: 10px;
 }
 .popup button{
   width: 100px;
   margin-top: 50px;
-  padding: 10px 0;
+  
   background: #CAA369;
   color:fff;
-  
   border: 0;
+  margin-left: 150px;
   outline: none;
   font-size: 20px;
   font-weight: 500;
 }
 .popup .detail{
-  font-size: 20px;
+  font-size: 15px;
   color:#222;
 
 }
 .popup .force{
-  font-size: 20px;
+  font-size: 15px;
   color:604844
 }
 
@@ -305,6 +310,7 @@ input{
         width: 100%;
         flex-wrap: wrap;
     } */
+  
   .form {
   width: 100%;
 }
@@ -318,6 +324,8 @@ input{
 
 /*Mobile styling*/
 @media (max-width: 568px) {
+  
+  
   .fields {
     grid-template-columns: 1fr;
   }
@@ -328,7 +336,77 @@ input{
   .phone {
         width: 100%;
     }
-   
+  .popup{
+  width: 100vw;
+  background: #F6F2E7;
+  border-radius: 10px;
+  align-content: center;
+  position: absolute;
+  top:50%;
+  left:50%;
+  box-shadow: 0 2px 4px #C1C1C1;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: cennter;
+  padding:0 30px 30px;
+  visibility: hidden;
+  
+}
+.open-popup{
+  visibility: visible;
+  top:50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.popup img{
+  width:100px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  
+  
+}
+.popup p{
+  text-align: center;
+  font-size: 15px;
+}
+.inner{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 20px 20px 0 20px;
+}
+.texting{
+  display: flex;
+  padding-left: 20px;
+
+  flex-direction: column;
+}
+.popup .close{
+  font-size: 30px;
+  margin-top: 10px;
+}
+.popup button{
+  width: 100px;
+  margin-top: 50px;
+  margin: 0 auto;
+  display: block;
+  background: #CAA369;
+  color:fff;
+  border: 0;
+  
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+.popup .detail{
+  font-size: 15px;
+  color:#222;
+
+}
+.popup .force{
+  font-size: 15px;
+  color:604844
+  
+} 
 }
 
 @media (max-width:480px){
