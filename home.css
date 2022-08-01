@@ -1,3 +1,61 @@
+
+/*pop up*/
+.popup{
+  width: 400px;
+  background: #F6F2E7;
+  border-radius: 10px;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top:50%;
+  left:50%;
+  box-shadow: 0 2px 4px #C1C1C1;
+  transform: translate(-50%,-50%);
+  text-align: cennter;
+  padding:0 30px 30px;
+  
+}
+.popup img{
+  width:100px;
+  
+  
+}
+.popup p{
+  text-align: center;
+  font-size: 15px;
+}
+.inner{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px 0 20px;
+}
+.texting{
+  display: flex;
+
+  flex-direction: column;
+}
+.popup button{
+  width: 100px;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #CAA369;
+  color:fff;
+  
+  border: 0;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+.popup .detail{
+  font-size: 20px;
+  color:#222;
+
+}
+.popup .force{
+  font-size: 20px;
+  color:604844
+}
+
 .form {
   width: 62%;
   margin: 0 auto;
@@ -146,7 +204,7 @@ input{
     
 }
 
-.network .radio.nigeria {
+.network .radio {
     display: flex;
     align-items: center;
 
@@ -154,13 +212,8 @@ input{
     font-weight: 400;
 }
 
-.network .radio.kenya {
-    display: none;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 400;
-  margin-right: 15px;
-    
+.spacing {
+  padding-
 }
 
 .radio label{

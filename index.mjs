@@ -38,7 +38,7 @@ inputField.forEach(input => {
 // let nigerianOperators = document.querySelectorAll('.radio.nigeria')
 let countryCarrier = {
   Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
-  kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
+  Kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
 }
 let selectNationality = document.querySelector('select');
 selectNationality.addEventListener('change', displayCountryCarriers);
@@ -47,18 +47,17 @@ function displayCountryCarriers(e) {
   let selectElement = e.target;
   let selectedCountry = selectElement.options[selectElement.selectedIndex].text;
 
-  console.log(selectElement.options[selectElement.selectedIndex])
   let radioContainers = document.querySelectorAll(".radio");
 
   for (let i = 0; i < radioContainers.length; i++) {
     let input = radioContainers[i].querySelector("input");
     let label = radioContainers[i].querySelector("label");
-    console.log(selectedCountry)
- console.log(countryCarrier[selectedCountry])
+    
     input.setAttribute('id', countryCarrier[selectedCountry][i]);
     input.setAttribute('value', countryCarrier[selectedCountry][i]);
 
     label.setAttribute('for', countryCarrier[selectedCountry][i]);
+    label.innerText = countryCarrier[selectedCountry][i];
   }
 }
 
