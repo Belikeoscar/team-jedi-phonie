@@ -116,6 +116,11 @@ input:required {
   border: #9a5318;
 }
 
+
+.required-label {
+  color: #d64d22;
+}
+
 .network{
   grid-column: 1/-1;
 
@@ -218,6 +223,7 @@ select.drop:focus {
 .input-fields input:focus {
     border: 1px solid #CAA369;
 }
+
 .input-fields input::placeholder{
     text-align: center;
     font-weight: 400;

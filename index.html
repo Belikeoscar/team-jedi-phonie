@@ -89,7 +89,7 @@
 
 
           <div class="input-fields">
-            <label for="first_name">First Name</label>
+            <label for="first_name">First Name<span class="required-label">&#42;</span></label>
             <input type="text" id="first_name" placeholder="Enter firstname" maxlength="40" required oninvalid="this.setCustomValidity('Please fill warrior')"
  oninput="setCustomValidity('')" />
           </div>
@@ -200,7 +200,7 @@
 
 
             <div class="input-fields phone">
-              <label type for="phoneInput">Phone Number</label>
+              <label for="phoneInput">Phone Number<span class="required-label">&#42;</span></label>
               <p id="validate-process"></p>
               <div class="tel-logo">
                 <span class="altschool"><img src="images/alt.svg" id="carrier-img" alt=""></span>
@@ -216,7 +216,8 @@
 
                 <input type="tel" placeholder="e.g +234 913XXXXXXX" data-selected-phone-no=""
                   data-selected-country="Nigeria" pattern="" id="phoneInput" list="suggest-prefixes" autocomplete="off"
-                  required>
+                  required oninvalid="this.setCustomValidity('Please fill warrior')"
+ oninput="setCustomValidity('')">
                 <datalist id="suggest-prefixes">
                 </datalist>
               </div>
