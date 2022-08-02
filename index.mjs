@@ -40,18 +40,28 @@ let close = document.querySelector("#close");
 close.addEventListener('click', closePopup);
 
 let resetBtn = document.querySelector("#reset-btn");
-// resetBtn.addEventListener('click', resetToDefault);
+
+let phoneInput = document.getElementById("phoneInput");
+
+
 function resetToDefault() {
   let img = document.querySelector("#carrier-img");
-  let validateProcessText = document.querySelector("#validate-process");
+  let validateProcessText = 
+  document.querySelector("#validate-process");
   
   img.src = "images/alt.svg";
   img.style.height = "40px";
   validateProcessText.innerText = "";
+
+  phoneInput.dataset.selectedPhoneNo = "";
+  phoneInput.dataset.selectedCountry = "";
+  phoneInput.setAttribute("pattern", "");
+  phoneInput.setAttribute("placeholder", "e.g +234 913XXXXXXX");
 }
 
 function openPopUp(e) {
-  if (phoneInput.checkValidity()) {
+  let fname = document.querySelector("#first_name");
+  if (phoneInput.checkValidity() && fname.checkValidity()) {
     e.preventDefault();
     popup.classList.add("open-popup");
   }
@@ -70,7 +80,7 @@ function closePopup() {
 
 // Changing network operators when alternating between Nigeria and Kenya
 
-let phoneInput = document.getElementById("phoneInput");
+
 
 let countryCarrier = {
   Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
