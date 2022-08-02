@@ -2,6 +2,8 @@
 
 ![team jedi](https://github.com/scarnation/team-jedi-phonie/blob/main/Jedi/jedi.png)
 
+### Crew
+ see (https://github.com/scarnation/team-jedi-phonie/graphs/contributors)
 ### What
 Solidify what you’ve learnt by building cool simple things you can showcase
 

@@ -1,4 +1,4 @@
-
+/*guess we need to clean up after we done and observe our tabulations and code comments for ease of understanding */
 /*pop up*/
 .popup{
   width: 100vw;
@@ -114,7 +114,7 @@
 }
 input:required {
   border: #9a5318;
-}
+}/*does your over ride or negate the initial input required property ann*/
 
 
 .required-label {
