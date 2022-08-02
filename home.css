@@ -1,27 +1,44 @@
 
 /*pop up*/
 .popup{
-  width: 400px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+ background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.popup > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 15px 0;
+  padding-bottom: 15px;
+  max-width: 500px;
   background: #F6F2E7;
   border-radius: 10px;
   align-content: center;
-  position: absolute;
-  top:50%;
-  left:50%;
+/*   position: absolute; */
+/*   top:50%;
+  left:50%; */
   box-shadow: 0 2px 4px #C1C1C1;
-  transform: translate(-50%,-50%) scale(0.1);
-  text-align: cennter;
+/*   transform: translate(-50%,-50%); */
+/*   text-align: cennter; */
   padding:0 30px 30px;
-  visibility: hidden;
   
 }
 .open-popup{
   visibility: visible;
-  top:50%;
-  transform: translate(-50%, -50%) scale(1);
+/*   top:50%;
+  transform: translate(-50%, -50%) scale(1); */
 }
 .popup img{
-  width:100px;
+  width:200px;
 }
 .popup p{
   text-align: center;
@@ -37,23 +54,16 @@
   padding-left: 20px;
 
   flex-direction: column;
+  justify-content: center;
 }
 .popup .close{
   /*padding: 325px;*/
+  align-self: flex-end;
   font-size: 30px;
   margin-top: 10px;
 }
 .popup input{
-  width: 100px;
-  margin-top: 50px;
-  
-  background: #CAA369;
-  color:fff;
-  border: 0;
-  margin-left: 150px;
-  outline: none;
-  font-size: 20px;
-  font-weight: 500;
+  display: none;
 }
 .popup .detail{
   font-size: 15px;
@@ -100,6 +110,9 @@
 /*     width: calc(100% / 2 - 30px);
     margin-bottom: 20px;
     margin-right: 20px; */
+}
+input:required {
+  border-color: #f4f4f0;
 }
 
 .network{
@@ -322,7 +335,17 @@ input{
 
 /*Mobile styling*/
 @media (max-width: 568px) {
-  
+  .popup > div {
+    max-width: 400px;
+  }
+
+  .popup img {
+    width: 150px;
+  }
+
+  .inner {
+    padding: 1rem 0;
+  }
   
   .fields {
     grid-template-columns: 1fr;
@@ -334,80 +357,85 @@ input{
   .phone {
         width: 100%;
     }
-  .popup{
-  width: 100vw;
-  background: #F6F2E7;
-  border-radius: 10px;
-  align-content: center;
-  position: absolute;
-  top:50%;
-  left:50%;
-  box-shadow: 0 2px 4px #C1C1C1;
-  transform: translate(-50%,-50%) scale(0.1);
-  text-align: cennter;
-  padding:0 30px 30px;
-  visibility: hidden;
-  
-}
-.open-popup{
-  visibility: visible;
-  top:50%;
-  transform: translate(-50%, -50%) scale(1);
-}
-.popup img{
-  width:100px;
-  margin-left: 100px;
-  margin-bottom: 20px;
-  
-  
-}
-.popup p{
-  text-align: center;
-  font-size: 15px;
-}
-.inner{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 30px;
-  padding: 20px 20px 0 20px;
-}
-.texting{
-  display: flex;
-  padding-left: 20px;
 
-  flex-direction: column;
-}
-.popup .close{
-  font-size: 30px;
-  margin-top: 10px;
-}
-.popup button{
-  width: 100px;
-  margin-top: 50px;
-  margin: 0 auto;
-  display: block;
-  background: #CAA369;
-  color:fff;
-  border: 0;
-  
-  outline: none;
-  font-size: 20px;
-  font-weight: 500;
-}
-.popup .detail{
-  font-size: 15px;
-  color:#222;
-
-}
-.popup .force{
-  font-size: 15px;
-  color:604844
-  
-} 
 }
 
 @media (max-width:480px){
+      .popup > div{
+        
+  /*   width: 100vw; */
+  /*   background: #F6F2E7;
+    border-radius: 10px; */
+  /*   align-content: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    box-shadow: 0 2px 4px #C1C1C1;
+    transform: translate(-50%,-50%) scale(0.1); */
+/*     text-align: center; */
+  /*   padding:0 30px 30px; */
+  /*   visibility: hidden; */
+    
+  }
+  .open-popup{
+    visibility: visible;
+/*     top:50%;
+    transform: translate(-50%, -50%) scale(1); */
+  }
+  .popup img{
+/*     width:100px;
+    margin-left: 100px; */
+    margin-bottom: 20px;
+    
+    
+  }
+  .popup p{
+    text-align: center;
+    font-size: 15px;
+  }
+  .inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 20px 20px 0 20px;
+  }
+
+  .texting{
+    display: flex;
+    padding-left: 20px;
+  
+    flex-direction: column;
+  }
+  .popup .close{
+    font-size: 30px;
+    align-self: flex-end;
+/*     margin-top: 10px; */
+  }
+  .popup button{
+/*     width: 100px; */
+    margin-top: 50px;
+    margin: 0 auto;
+    display: block;
+    background: #CAA369;
+    color:fff;
+    border: 0;
+    
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .popup .detail{
+    font-size: 15px;
+    color:#222;
+  
+  }
+  .popup .force{
+    font-size: 15px;
+    color:604844
+    
+  } 
     .input-fields{
         width: 100%;
     }

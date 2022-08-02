@@ -40,7 +40,15 @@ let close = document.querySelector("#close");
 close.addEventListener('click', closePopup);
 
 let resetBtn = document.querySelector("#reset-btn");
-resetBtn.addEventListener('click', resetToDefault);
+// resetBtn.addEventListener('click', resetToDefault);
+function resetToDefault() {
+  let img = document.querySelector("#carrier-img");
+  let validateProcessText = document.querySelector("#validate-process");
+  
+  img.src = "images/alt.svg";
+  img.style.height = "40px";
+  validateProcessText.innerText = "";
+}
 
 function openPopUp(e) {
   if (phoneInput.checkValidity()) {
@@ -50,17 +58,13 @@ function openPopUp(e) {
 
 }
 function closePopup() {
+  resetBtn.click();
+  resetToDefault()
   popup.classList.remove("open-popup")
+  
 }
 
-function resetToDefault() {
-  let img = document.querySelector("#carrier-img");
-  let validateProcessText = document.querySelector("#validate-process");
-  
-  img.src = "images/alt.svg";
-  img.style.height = "40px";
-  validateProcessText.innerText = "";
-}
+
 
 //Main phonie functionality
 

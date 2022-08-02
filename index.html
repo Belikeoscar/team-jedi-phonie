@@ -46,7 +46,24 @@
 
   </header>
   <!--lets look into applying semantics here to improve accesibility of the site-->
+  <div class="popup" id="popup">
+        <div>
+        <label class="close" id="close"><i class='bx bx-x'></i></label>
+        <div class="inner">
+          <img src="images/jedibig.png">
+          <div class="texting">
+            <p class="detail">Details and Number Confirmed</p>
+            <p class="force">May the force be with you</p>
+          </div>
+
+        </div>
+        <input type="reset" form="user-form" value="Reset" class="home-btn" id="reset-btn" >
+        
+      </div>
+      </div>
   <main>
+    <!-- pop up menu-->
+      
     <aside>
       <!--       <img class="jedi" src="./Group 10 2.svg" alt="" /> -->
       <img src="images/altHack.svg" alt="" width="160" height="80">
@@ -62,20 +79,7 @@
 
 
     <div class="form">
-      <!-- pop up menu-->
-      <div class="popup" id="popup">
-        <label class="close" id="close"><i class='bx bx-x'></i></label>
-        <div class="inner">
-          <img src="images/jedibig.png">
-          <div class="texting">
-            <p class="detail">Details and Number Confirmed</p>
-            <p class="force">May the force be with you</p>
-          </div>
-
-        </div>
-        <input type="reset" form="user-form" value="Reset" class="btn home-btn" id="reset-btn">
-        
-      </div>
+      
 
       <h1 class="form-title">Phonie </h1>
       <p class="guide">Please fill the form below</p>
@@ -86,7 +90,7 @@
 
           <div class="input-fields">
             <label for="first_name">First Name</label>
-            <input type="text" id="name" placeholder="Enter firstname" maxlength="40" />
+            <input type="text" id="name" placeholder="Enter firstname" maxlength="40" required />
           </div>
 
           <div class="input-fields">
@@ -218,7 +222,7 @@
 
             </div>
             <div class="submit-btn">
-              <input type="submit" id="submit-form" class="btn home-btn" value="Submit" />
+              <input type="reset" id="submit-form" class="btn home-btn" value="Submit" />
               <!--             <button id="submit-form" >Submit</button> -->
 
             </div>
