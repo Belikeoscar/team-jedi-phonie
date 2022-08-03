@@ -1,6 +1,4 @@
 
-
-
 table {
   margin: 0 auto;
   height: 90%;
@@ -117,9 +115,9 @@ i {
 
 @media (max-width:768px) {
 
-  html, body, main, aside {
+/*   html, body, main, aside {
   height: 0 !important;
-}
+} */
   
   main {
 /*     padding:30px !important; */
@@ -149,7 +147,7 @@ i {
 
   td,
   th {
-    padding: 20px 50px 20px 20px;
+    padding: 20px 25px 20px 20px;
     margin: 80px;
 }
 
@@ -167,8 +165,11 @@ i {
 
 @media screen and (max-width: 992px) {
   
-html, body, main, aside {
-  height: 0 !important;
+  html,
+  body,
+  .main__content,
+  .image__container {
+  height: 0 ;
 }
 
 }

@@ -46,9 +46,9 @@ let phoneInput = document.getElementById("phoneInput");
 
 function resetToDefault() {
   let img = document.querySelector("#carrier-img");
-  let validateProcessText = 
-  document.querySelector("#validate-process");
-  
+  let validateProcessText =
+    document.querySelector("#validate-process");
+
   img.src = "images/alt.svg";
   img.style.height = "40px";
   validateProcessText.innerText = "";
@@ -71,7 +71,7 @@ function closePopup() {
   resetBtn.click();
   resetToDefault()
   popup.classList.remove("open-popup")
-  
+
 }
 
 
@@ -123,7 +123,7 @@ function displayCountryCarriers(e) {
   } else {
     phoneInput.setAttribute('placeholder', "e.g +254748 xxxxxx")
   }
-  
+
   //selects all radio button containers
   let radioContainers = document.querySelectorAll(".radio");
 
@@ -137,7 +137,7 @@ function displayCountryCarriers(e) {
     label.setAttribute('for', countryCarrier[selectedCountry][i]);
     label.innerText = countryCarrier[selectedCountry][i];
 
-    if (input.checked)  {
+    if (input.checked) {
       phoneInput.setAttribute('pattern', countryCarrierPattern[selectedCountry][countryCarrier[selectedCountry][i]]);
 
       phoneInput.dataset.selectedPhoneNo = countryCarrier[selectedCountry][i];
@@ -196,7 +196,7 @@ function displayCarrier() {
   let formattedNo = formatPhoneNo(phoneInput.value);
 
   if (phoneInput.dataset.selectedCountry == "Nigeria") validateNCarrierProcess(formattedNo)
-                                                                              
+
   else validateKCarrierProcess(formattedNo)
 
   if (formattedNo.length == 3 && formattedNo.startsWith("0")) {
@@ -267,6 +267,9 @@ function validateNCarrierProcess(phoneNo) {
     return;
   }
 
+  console.log(phoneInput.value)
+  console.log(phoneInput.value.length)
+  console.log(phoneInput.checkValidity())
   if (phoneInput.checkValidity()) {
     text.innerText = `phone number matches carrier: ${selectedCarrier}`;
     text.style.color = "#329721";
@@ -307,63 +310,63 @@ let kenyaPrefixesRange = {
     else return false;
   },
 
-    Airtel(prefix) {
-      if (+prefix >= 100 && +prefix <= 103) return true;
-      if (+prefix >= 730 && +prefix <= 739) return true;
-      if (+prefix >= 750 && +prefix <= 756) return true;
-      if (+prefix == 762) return true;
-      if (+prefix >= 780 && +prefix <= 789) return true;
-      return false;
-    },
+  Airtel(prefix) {
+    if (+prefix >= 100 && +prefix <= 103) return true;
+    if (+prefix >= 730 && +prefix <= 739) return true;
+    if (+prefix >= 750 && +prefix <= 756) return true;
+    if (+prefix == 762) return true;
+    if (+prefix >= 780 && +prefix <= 789) return true;
+    return false;
+  },
 
-    Telkom(prefix) {
-      if (+prefix >= 770 && +prefix <= 779) return true;
-      return false;
-    },
+  Telkom(prefix) {
+    if (+prefix >= 770 && +prefix <= 779) return true;
+    return false;
+  },
 
-    Equitel(prefix) {
-      if (+prefix >= 763 && +prefix <= 766) return true;
-      return false;
-    }
+  Equitel(prefix) {
+    if (+prefix >= 763 && +prefix <= 766) return true;
+    return false;
+  }
 }
 
 function validateKCarrierProcess(phoneNo) {
-    let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
-    if (!selectedCarrier) return;
-    if (phoneNo.length <= 2) {
-      text.innerText = `No carrier detected yet`;
-      text.style.color = "#d64d22";
-      return;
-    }
-  
-    if (phoneInput.checkValidity()) {
-      text.innerText = `phone number matches carrier: ${selectedCarrier}`;
-      text.style.color = "#329721";
-      return;
-    }
-  
-    let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
-  
-    let testValidity = regexPattern.test(phoneNo.slice(0, 10));
-  console.log(testValidity);
-    if (phoneNo.length > 10 && testValidity) {
-      text.innerText = `You are on the right track phone number matches ${selectedCarrier} but no of characters exceeded`;
-      text.style.color = "#d64d22";
-      return;
-    }
-
-    let prefix = phoneNo.slice(1, 4);
-    if (kenyaPrefixesRange[selectedCarrier](prefix)) {
-      text.innerText = `You are on the right track so far`;
-        text.style.color = "#329721";
-        return;
-    }
-
-    if (phoneNo.length > 4) {
-      text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+  let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
+  if (!selectedCarrier) return;
+  if (phoneNo.length <= 2) {
+    text.innerText = `No carrier detected yet`;
     text.style.color = "#d64d22";
-    }
-    
+    return;
+  }
+
+  if (phoneInput.checkValidity()) {
+    text.innerText = `phone number matches carrier: ${selectedCarrier}`;
+    text.style.color = "#329721";
+    return;
+  }
+
+  let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
+
+  let testValidity = regexPattern.test(phoneNo.slice(0, 10));
+  console.log(testValidity);
+  if (phoneNo.length > 10 && testValidity) {
+    text.innerText = `You are on the right track phone number matches ${selectedCarrier} but no of characters exceeded`;
+    text.style.color = "#d64d22";
+    return;
+  }
+
+  let prefix = phoneNo.slice(1, 4);
+  if (kenyaPrefixesRange[selectedCarrier](prefix)) {
+    text.innerText = `You are on the right track so far`;
+    text.style.color = "#329721";
+    return;
+  }
+
+  if (phoneNo.length > 4) {
+    text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+    text.style.color = "#d64d22";
+  }
+
 }
 
 
