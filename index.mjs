@@ -191,8 +191,17 @@ function disableInput() {
   }
 }
 
+//checks if phone input is valid if no of characters is reached
+
+function checkInputValidity(phoneNo) {
+  let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
+
+  let testValidity = regexPattern.test(phoneNo);
+  return testValidity;
+}
+
 function displayCarrier() {
-  let checkValidity = phoneInput.checkValidity();
+  let checkValidity = checkInputValidity(phoneInput.value);
   let formattedNo = formatPhoneNo(phoneInput.value);
 
   if (phoneInput.dataset.selectedCountry == "Nigeria") validateNCarrierProcess(formattedNo)
@@ -215,9 +224,12 @@ function displayCarrier() {
 
 //formats inputted phone number
 function formatPhoneNo(phoneNo) {
+  
   if (phoneNo.startsWith("+2340")) phoneNo = phoneNo.replace("+234", "");
+  
   if (phoneNo.startsWith("+2540")) phoneNo = phoneNo.replace("+254", "");
 
+  
   if (phoneNo.startsWith("2340")) phoneNo = phoneNo.replace("234", "");
   if (phoneNo.startsWith("2540")) phoneNo = phoneNo.replace("254", "");
 
@@ -267,10 +279,8 @@ function validateNCarrierProcess(phoneNo) {
     return;
   }
 
-  console.log(phoneInput.value)
-  console.log(phoneInput.value.length)
-  console.log(phoneInput.checkValidity())
-  if (phoneInput.checkValidity()) {
+  
+  if (checkInputValidity(phoneNo)) {
     text.innerText = `phone number matches carrier: ${selectedCarrier}`;
     text.style.color = "#329721";
     return;
@@ -339,7 +349,7 @@ function validateKCarrierProcess(phoneNo) {
     return;
   }
 
-  if (phoneInput.checkValidity()) {
+  if (checkInputValidity(phoneInput.value)) {
     text.innerText = `phone number matches carrier: ${selectedCarrier}`;
     text.style.color = "#329721";
     return;
