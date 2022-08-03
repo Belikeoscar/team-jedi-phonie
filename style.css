@@ -16,6 +16,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
 }
+
 main{
   padding-top: 65px;
 }
@@ -69,8 +70,6 @@ header {
 .links {
   display: flex;
 }
-
-/* Feel free to uncomment if need be  */
 
 /* .menu ul a:hover, .menu ul a:visited{
     color: #CAA369;
@@ -249,7 +248,7 @@ aside {
   header {
     padding: 0 1rem;
   }
-  
+
   main{
     padding: 6.5rem 3rem 3rem 3rem;
   }

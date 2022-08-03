@@ -56,7 +56,7 @@ function resetToDefault() {
   phoneInput.dataset.selectedPhoneNo = "";
   phoneInput.dataset.selectedCountry = "";
   phoneInput.setAttribute("pattern", "");
-  phoneInput.setAttribute("placeholder", "e.g +234 913XXXXXXX");
+  phoneInput.setAttribute("placeholder", "e.g +234913XXXXXXX");
 }
 
 function openPopUp(e) {
@@ -103,9 +103,9 @@ let countryCarrierPattern = {
 
     Airtel: "^(?:254|\\+254|0)0??((?:(?:7(?:(?:3[0-9])|(?:5[0-6])|(8[5-9])))|(?:1(?:[0][0-2])))[0-9]{6})$",
 
-    Telkom: "^(?:254|\\+254|0)0??(76[3-6][0-9]{6})$",
+    Telkom: "^(?:254|\\+254|0)0??(77[0-9][0-9]{6})$",
 
-    Equitel: "^(?:254|\\+254|0)0??(76[34][0-9]{6})$"
+    Equitel: "^(?:254|\\+254|0)0??(76[3-6][0-9]{6})$"
   }
 }
 
@@ -119,9 +119,9 @@ function displayCountryCarriers(e) {
   phoneInput.dataset.selectedCountry = selectedCountry;
 
   if (selectedCountry == "Nigeria") {
-    phoneInput.setAttribute('placeholder', "e.g +234 913XXXXXXX")
+    phoneInput.setAttribute('placeholder', "e.g +234913XXXXXXX")
   } else {
-    phoneInput.setAttribute('placeholder', "e.g +254 748 xxxxxx")
+    phoneInput.setAttribute('placeholder', "e.g +254748 xxxxxx")
   }
   
   //selects all radio button containers
