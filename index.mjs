@@ -76,6 +76,7 @@ function closePopup() {
 
 
 
+
 //Main phonie functionality
 
 // Changing network operators when alternating between Nigeria and Kenya
