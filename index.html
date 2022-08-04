@@ -91,7 +91,7 @@
 
           <div class="input-fields">
             <label for="first_name">First Name<span class="required-label">&#42;</span></label>
-            <input type="text" id="first_name" placeholder="Enter firstname" maxlength="40" required oninvalid="this.setCustomValidity('Please commit, Warrior.')"
+            <input type="text" id="first_name" placeholder="Enter firstname" maxlength="14"oninvalid="this.setCustomValidity('Please commit, Warrior.')"
  oninput="setCustomValidity('')" />
           </div>
 
@@ -186,7 +186,7 @@
 
                 <input type="tel" placeholder="e.g +234913XXXXXXX" data-selected-phone-no=""
                   data-selected-country="Nigeria" pattern="" id="phoneInput" list="suggest-prefixes" autocomplete="off"
-                  required oninvalid="this.setCustomValidity('Please fill, Warrior.')"
+oninvalid="this.setCustomValidity('Please fill, Warrior.')"
  oninput="setCustomValidity('')">
                 <datalist id="suggest-prefixes">
                 </datalist>

@@ -61,12 +61,17 @@ function resetToDefault() {
 
 function openPopUp(e) {
   let fname = document.querySelector("#first_name");
-  if (phoneInput.checkValidity() && fname.checkValidity()) {
-    e.preventDefault();
+  let phoneNo = phoneInput.value;
+  e.preventDefault();
+  if ((fname.value !== "" && fname.value.length <= 14) && (checkInputValidity(phoneNo) && phoneNo != "")) {
     popup.classList.add("open-popup");
+  } else {
+    fname.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+    return;
   }
 
 }
+
 function closePopup() {
   resetBtn.click();
   resetToDefault()
@@ -87,15 +92,16 @@ let countryCarrier = {
   Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
   Kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
 }
-
+//Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
+//MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
 //Regex pattern for major Nigerian Network providers
 let countryCarrierPattern = {
   Nigeria: {
-    MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
+    MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3|6)))\\d{7})",
 
     Glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
 
-    Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
+    Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|8(0(2|8)|1(2))|90(1|2|4|7)|91(2))\\d{7})",
 
     "9 Mobile": "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(8(0(9)|1(7|8))|90(8|9))\\d{7})"
   },
@@ -193,7 +199,7 @@ function disableInput() {
     selectedCarrier.classList.add('shake');
     setTimeout(() => {
       selectedCarrier.classList.remove('shake');
-    }, 820)  
+    }, 820)
   }
 }
 
@@ -230,12 +236,12 @@ function displayCarrier() {
 
 //formats inputted phone number
 function formatPhoneNo(phoneNo) {
-  
+
   if (phoneNo.startsWith("+2340")) phoneNo = phoneNo.replace("+234", "");
-  
+
   if (phoneNo.startsWith("+2540")) phoneNo = phoneNo.replace("+254", "");
 
-  
+
   if (phoneNo.startsWith("2340")) phoneNo = phoneNo.replace("234", "");
   if (phoneNo.startsWith("2540")) phoneNo = phoneNo.replace("254", "");
 
@@ -249,9 +255,9 @@ function formatPhoneNo(phoneNo) {
 
 //stores possible carrier prefixes
 let prefixesSuggestions = {
-  MTN: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913"],
+  MTN: ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913","0916"],
   Glo: ["0705", "0805", "0807", "0811", "0815", "0905", "0915"],
-  Airtel: ["0701", "0702", "0704", "0708", "0802", "0808", "0901", "0902", "0904", "0904"],
+  Airtel: ["0701", "0702", "0704", "0708", "0802", "0808", "0812","0901", "0902", "0904", "0904", "0912"],
   "9 Mobile": ["0809", "0817", "0818", "0908", "0909"]
 
 }
@@ -285,7 +291,7 @@ function validateNCarrierProcess(phoneNo) {
     return;
   }
 
-  
+
   if (checkInputValidity(phoneNo)) {
     text.innerText = `phone number matches carrier: ${selectedCarrier}`;
     text.style.color = "#329721";
@@ -308,7 +314,7 @@ function validateNCarrierProcess(phoneNo) {
       return;
     }
   }
-  text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+  text.innerText = `phone number doesn't match the selected carrier. You selected ${selectedCarrier}`;
   text.style.color = "#d64d22";
 
 }
@@ -379,7 +385,7 @@ function validateKCarrierProcess(phoneNo) {
   }
 
   if (phoneNo.length > 4) {
-    text.innerText = `phone number doesn't matches the selected carrier. You selected ${selectedCarrier}`;
+    text.innerText = `phone number doesn't match the selected carrier. You selected ${selectedCarrier}`;
     text.style.color = "#d64d22";
   }
 
