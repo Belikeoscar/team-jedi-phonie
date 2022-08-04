@@ -123,12 +123,6 @@ input:required {
 
 .network{
   grid-column: 1/-1;
-
-/*     display: flex;
-    flex-direction: row;
-   align-items: center;
-   justify-content: space-between;
-    width: 80%; */
 }
 
 .network .network-provider{
@@ -138,6 +132,16 @@ input:required {
    width: 60%;
     justify-content: space-between;
   align-items: center;
+}
+
+/* input[disabled] {pointer-events:none} */
+
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .phone{
@@ -254,9 +258,6 @@ input{
 .submit-btn{
   align-self: flex-end;
   margin-top: 2rem;
-/*     position: absolute;
-    bottom: -40px;
-    right: 50px; */
 }
 
 .home-btn.btn{
@@ -307,9 +308,23 @@ input{
   padding-left: 10px
 }
 
-/* .mtn, .airtel, .glo, .nine-mobile{
-    display: none;
-} */
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 
 @media (max-width: 1024px) {
   .form {
@@ -319,16 +334,6 @@ input{
 }
 
 @media (max-width:768px){
-
-/*     .network {
-        display: flex;
-        flex-direction: column;
-        align-items:flex-start;
-        justify-content: space-between;
-        width: 100%;
-        flex-wrap: wrap;
-    } */
-  
   .form {
   width: 100%;
 }

@@ -149,8 +149,6 @@ function displayCountryCarriers(e) {
 }
 
 
-
-
 //store selected carrier
 let selectedCarrier = document.querySelector("#selectCarrier");
 selectedCarrier.addEventListener('click', knowCarrier);
@@ -177,8 +175,10 @@ function setPatternAttribute(carrier) {
   phoneInput.setAttribute('pattern', countryCarrierPattern[phoneInput.dataset.selectedCountry][carrier]);
 }
 
+let inputContainer = document.querySelector('#input-container');
+
 phoneInput.addEventListener('input', displayCarrier);
-phoneInput.addEventListener('click', disableInput);
+inputContainer.addEventListener('click', disableInput);
 
 let carrierImg = document.querySelector("#carrier-img");
 
@@ -188,7 +188,12 @@ function disableInput() {
     phoneInput.disabled = true;
     text.innerText = `Please select a carrier above`;
     text.style.color = "#d64d22";
+    console.log("helo")
     phoneInput.style.backgroundColor = "#f4f4f0";
+    selectedCarrier.classList.add('shake');
+    setTimeout(() => {
+      selectedCarrier.classList.remove('shake');
+    }, 820)  
   }
 }
 
