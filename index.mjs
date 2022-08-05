@@ -61,16 +61,30 @@ function resetToDefault() {
 
 function openPopUp(e) {
   let fname = document.querySelector("#first_name");
-  let phoneNo = phoneInput.value;
-  e.preventDefault();
-  if ((fname.value !== "" && fname.value.length <= 14) && (checkInputValidity(phoneNo) && phoneNo != "")) {
+  let person = document.querySelector(".detail");
+  person.innerText = `Hi ${fname.value} your details and ${phoneInput.dataset.selectedPhoneNo} number has been confirmed`;
+  if (phoneInput.checkValidity() && fname.checkValidity()) {
+    e.preventDefault();
     popup.classList.add("open-popup");
-  } else {
-    fname.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-    return;
   }
 
 }
+
+
+// function openPopUp(e) {
+//   let fname = document.querySelector("#first_name");
+//   let phoneNo = phoneInput.value;
+//   e.preventDefault();
+  
+
+//   if ((fname.value !== "" && fname.value.length <= 14) && (checkInputValidity(phoneNo) && phoneNo != "")) {
+//     popup.classList.add("open-popup");
+//   } else {
+//     fname.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+    
+//   }
+
+// }
 
 function closePopup() {
   resetBtn.click();

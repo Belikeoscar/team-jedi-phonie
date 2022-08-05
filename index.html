@@ -53,7 +53,7 @@
         <div class="inner">
           <img src="images/jedibig.png">
           <div class="texting">
-            <p class="detail">Details and Number Confirmed</p>
+            <p class="detail"></p>
             <p class="force">"May the force be with you"</p>
           </div>
 
@@ -91,8 +91,8 @@
 
           <div class="input-fields">
             <label for="first_name">First Name<span class="required-label">&#42;</span></label>
-            <input type="text" id="first_name" placeholder="Enter firstname" maxlength="14"oninvalid="this.setCustomValidity('Please commit, Warrior.')"
- oninput="setCustomValidity('')" />
+            <input type="text" id="first_name" placeholder="Enter firstname" maxlength="20"oninvalid="this.setCustomValidity('Please commit, Warrior.')"
+ oninput="setCustomValidity('')" required/>
           </div>
 
           <div class="input-fields">
@@ -187,7 +187,7 @@
                 <input type="tel" placeholder="e.g +234913XXXXXXX" data-selected-phone-no=""
                   data-selected-country="Nigeria" pattern="" id="phoneInput" list="suggest-prefixes" autocomplete="off"
 oninvalid="this.setCustomValidity('Please fill, Warrior.')"
- oninput="setCustomValidity('')">
+ oninput="setCustomValidity('')" required>
                 <datalist id="suggest-prefixes">
                 </datalist>
               </div>
