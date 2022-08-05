@@ -45,18 +45,7 @@ let phoneInput = document.getElementById("phoneInput");
 
 
 function resetToDefault() {
-  let img = document.querySelector("#carrier-img");
-  let validateProcessText =
-    document.querySelector("#validate-process");
-
-  img.src = "images/alt.svg";
-  img.style.height = "40px";
-  validateProcessText.innerText = "";
-
-  phoneInput.dataset.selectedPhoneNo = "";
-  phoneInput.dataset.selectedCountry = "";
-  phoneInput.setAttribute("pattern", "");
-  phoneInput.setAttribute("placeholder", "e.g +234913XXXXXXX");
+  window.location.reload();
 }
 
 function openPopUp(e) {
@@ -70,21 +59,6 @@ function openPopUp(e) {
 
 }
 
-
-// function openPopUp(e) {
-//   let fname = document.querySelector("#first_name");
-//   let phoneNo = phoneInput.value;
-//   e.preventDefault();
-  
-
-//   if ((fname.value !== "" && fname.value.length <= 14) && (checkInputValidity(phoneNo) && phoneNo != "")) {
-//     popup.classList.add("open-popup");
-//   } else {
-//     fname.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-    
-//   }
-
-// }
 
 function closePopup() {
   resetBtn.click();
