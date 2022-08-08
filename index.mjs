@@ -85,9 +85,9 @@ let countryCarrier = {
 //Regex pattern for major Nigerian Network providers
 let countryCarrierPattern = {
   Nigeria: {
-    MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3|6)))\\d{7})",
+    MTN: "^(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3|6)))\\d{7})$",
 
-    Glo: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})",
+    Glo: "^(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(05)|8(0(5|7)|1(1|5))|9(0|1)5)\\d{7})$",
 
     Airtel: "^(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|8(0(2|8)|1(2))|90(1|2|4|7)|91(2))\\d{7})$",
 
@@ -165,7 +165,7 @@ function knowCarrier(e) {
 
 // sets input pattern to the pattern of the selected carrier
 function setPatternAttribute(carrier) {
-  console.log("carrier");
+  
   phoneInput.setAttribute('pattern', countryCarrierPattern[phoneInput.dataset.selectedCountry][carrier]);
 }
 
@@ -182,7 +182,7 @@ function disableInput() {
     phoneInput.disabled = true;
     text.innerText = `Please select a carrier above`;
     text.style.color = "#d64d22";
-    console.log("helo")
+    
     phoneInput.style.backgroundColor = "#f4f4f0";
     selectedCarrier.classList.add('shake');
     setTimeout(() => {
@@ -253,7 +253,7 @@ let prefixesSuggestions = {
 //Displays possible carrier prefixes to user
 function displayPrefixesSuggestions(phoneNo, formattedNo) {
   let selectedCarrier = phoneInput.dataset.selectedPhoneNo;
-  console.log(selectedCarrier)
+ 
   if (!prefixesSuggestions[selectedCarrier]) return;
   let dataList = document.querySelector('#suggest-prefixes');
   dataList.replaceChildren();
@@ -355,11 +355,8 @@ function validateKCarrierProcess(phoneNo) {
     return;
   }
 
-  let regexPattern = new RegExp(phoneInput.getAttribute("pattern"));
 
-  let testValidity = regexPattern.test(phoneNo.slice(0, 10));
-  console.log(testValidity);
-  if (phoneNo.length > 10 && testValidity) {
+  if (phoneNo.length > 10 && checkInputValidity(phoneNo.slice(0, 10))) {
     text.innerText = `You are on the right track phone number matches ${selectedCarrier} but no of characters exceeded`;
     text.style.color = "#d64d22";
     return;
