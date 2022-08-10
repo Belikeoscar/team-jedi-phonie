@@ -51,8 +51,10 @@ function resetToDefault() {
 function openPopUp(e) {
   let fname = document.querySelector("#first_name");
   let person = document.querySelector(".detail");
+  let email = document.querySelector("#email");
+  
   person.innerText = `Hi ${fname.value} your details and ${phoneInput.dataset.selectedPhoneNo} number has been confirmed`;
-  if (phoneInput.checkValidity() && fname.checkValidity()) {
+  if (phoneInput.checkValidity() && fname.checkValidity() && email.checkValidity()) {
     e.preventDefault();
     popup.classList.add("open-popup");
   }
