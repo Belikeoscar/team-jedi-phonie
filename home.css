@@ -271,6 +271,16 @@ input{
     border-radius: 5px;
 }
 
+.home-btn.btn:hover {
+  position: relative;
+  top: -1px;
+  cursor: pointer;
+}
+
+.home-btn.btn:active {
+  opacity: 0.9;
+}
+
 .tel-logo{
     display: flex;
     justify-content: flex-start;

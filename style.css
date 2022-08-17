@@ -135,6 +135,10 @@ nav label.button:hover {
   .links {
     display: block;
     }
+
+  label {
+    cursor: pointer;
+  }
    
   nav label.bars {
     display: block;
