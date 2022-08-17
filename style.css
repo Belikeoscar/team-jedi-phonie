@@ -98,6 +98,10 @@ nav label.button:hover {
     display: none;
 }
 
+label {
+    cursor: pointer;
+  }
+
 
 @media (max-width:768px) {
   
@@ -136,9 +140,6 @@ nav label.button:hover {
     display: block;
     }
 
-  label {
-    cursor: pointer;
-  }
    
   nav label.bars {
     display: block;

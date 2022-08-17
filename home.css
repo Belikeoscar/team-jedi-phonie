@@ -62,6 +62,7 @@
   font-size: 30px;
   color:  #CAA369;;
   margin-top: 10px;
+  cursor: pointer;
 }
 .popup input{
   display: none;
