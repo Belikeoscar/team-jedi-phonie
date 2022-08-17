@@ -53,7 +53,7 @@ function openPopUp(e) {
   let person = document.querySelector(".detail");
   let email = document.querySelector("#email");
   
-  person.innerText = `Hi ${fname.value} your details and ${phoneInput.dataset.selectedPhoneNo} number has been confirmed`;
+  person.innerText = `Hi ${fname.value}, your details and ${phoneInput.dataset.selectedPhoneNo} number has been confirmed`;
   if (phoneInput.checkValidity() && fname.checkValidity() && email.checkValidity()) {
     e.preventDefault();
     popup.classList.add("open-popup");
@@ -82,8 +82,7 @@ let countryCarrier = {
   Nigeria: ["Glo", "MTN", "Airtel", "9 Mobile"],
   Kenya: ["Safaricom", "Airtel", "Telkom", "Equitel"]
 }
-//Airtel: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(70(1|2|4|8)|80(2|8)|90(1|2|4|7))\\d{7})",
-//MTN: "(((^0)|((^\\+)(234){1}0?)|((^234)0?))(7(0)(3|6)|8(0(3|6)|1(0|3|4|6))|9(0(3|6)|1(3)))\\d{7})",
+
 //Regex pattern for major Nigerian Network providers
 let countryCarrierPattern = {
   Nigeria: {
@@ -377,18 +376,6 @@ function validateKCarrierProcess(phoneNo) {
   }
 
 }
-
-
-// Password
-
-
-//regex kenya equitel: ^(?:254|\+254|0)?(76[34][0-9]{6})$
-
- // safari: ^(?:254|\+254|0)?((?:(?:7(?:(?:[01249][0-9])|(?:5[789])|(?:6[89])))|(?:1(?:[1][0-5])))[0-9]{6})$
-  //i saw nwei this time figuring this thing out 
- // airtel: ^(?:254|\+254|0)?((?:(?:7(?:(?:3[0-9])|(?:5[0-6])|(8[5-9])))|(?:1(?:[0][0-2])))[0-9]{6})$
-
-//  "telcom/Orange": ^(?:254|\+254|0)?(77[0-6][0-9]{6})$
 
 
 
