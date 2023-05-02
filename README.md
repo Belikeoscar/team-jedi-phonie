@@ -70,4 +70,5 @@ When the user opens your dashboard app, they see HTML tables showing the followi
 #### Advanced features (OPTIONAL- build any, some or all of the following if you feel up to it) 
 
 * Make the tables sortable by (at least) the column holding the numbers. Indicate what columns are sortable (e.g with an icon or by adding the <> charectars in the column header e.t.c). When the user clicks on a sortable column header, sort the records in the table by that column (e.g switch the current sort order such that if the column was already sorted ASC, sort in DESC)
+*************************
 
